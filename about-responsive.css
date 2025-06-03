@@ -1,0 +1,50 @@
+/* ============================================================
+   Responsive Styles for About Section
+   ============================================================ */
+.about {
+    padding: var(--space-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about h2 {
+    color: var(--primary-color);
+    margin-bottom: var(--space-lg);
+}
+
+.about p {
+    font-size: var(--font-size-md);
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+.remedies-container {
+    margin-top: var(--space-xl);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-md);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .about {
+        padding: var(--space-md);
+    }
+
+    .about h2 {
+        font-size: var(--font-size-lg);
+    }
+
+    .about p {
+        font-size: var(--font-size-sm);
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    }
+}

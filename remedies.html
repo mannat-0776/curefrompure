@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Remedies - Health Remedies</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: #f7fafc;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(60,132,206,0.06);
+            padding: 0.5rem 2vw;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .logo img {
+            height: 48px;
+            border-radius: 8px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #3c84ce;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s, background 0.2s;
+            padding: 0.3em 0.7em;
+            border-radius: 6px;
+        }
+        .nav-links a.active,
+        .nav-links a:hover {
+            background: #e3f0ff;
+            color: #245fa5;
+        }
+        /* Hero Banner */
+        .hero-remedies {
+            width: 100%;
+            background: linear-gradient(120deg, #e3f0ff 0%, #f7fafc 100%);
+            padding: 56px 0 36px 0;
+            text-align: center;
+        }
+        .hero-remedies h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #245fa5;
+            margin-bottom: 12px;
+        }
+        .hero-remedies p {
+            color: #3c84ce;
+            font-size: 1.15rem;
+            margin-bottom: 0;
+        }
+        /* Remedies Grid */
+        .remedies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 2.5rem auto 2rem auto;
+            padding: 0 1rem;
+        }
+        .remedy-card {
+            background: #fff;
+            border-radius: 1.2rem;
+            box-shadow: 0 2px 12px rgba(60,132,206,0.08);
+            padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.18s, box-shadow 0.18s;
+            position: relative;
+        }
+        .remedy-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 6px 24px rgba(60,132,206,0.13);
+        }
+        .remedy-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .remedy-header img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 0.7rem;
+            border: 2px solid #e3f0ff;
+        }
+        .remedy-header h2 {
+            font-size: 1.25rem;
+            color: #245fa5;
+            margin: 0;
+            font-weight: 600;
+        }
+        .remedy-content h3 {
+            font-size: 1.05rem;
+            color: #3c84ce;
+            margin: 0.7rem 0 0.3rem 0;
+        }
+        .remedy-content ul {
+            padding-left: 1.2em;
+            margin: 0 0 0.7em 0;
+        }
+        .remedy-content li {
+            font-size: 0.98rem;
+            margin-bottom: 0.2em;
+        }
+        .remedy-content p {
+            font-size: 0.97rem;
+            color: #444;
+            margin: 0.5em 0 0 0;
+        }
+        /* Back to Top */
+        .back-to-top {
+            text-align: center;
+            margin: 2.5rem 0 1.5rem 0;
+        }
+        .back-to-top a {
+            color: #3c84ce;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+        .back-to-top a:hover {
+            color: #245fa5;
+            text-decoration: underline;
+        }
+        /* Footer */
+        footer {
+            background: #fff;
+            padding: 1.5rem 0 0.7rem 0;
+            text-align: center;
+            border-top: 1px solid #e3f0ff;
+            margin-top: 2rem;
+            color: #245fa5;
+            font-size: 1rem;
+        }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .remedies-grid {
+                gap: 1.2rem;
+            }
+        }
+        @media (max-width: 700px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0.5rem 1vw;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 0.7rem;
+            }
+            .hero-remedies h1 {
+                font-size: 1.3rem;
+            }
+            .remedies-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-remedies {
+                padding: 28px 0 12px 0;
+            }
+            .remedy-card {
+                padding: 1rem 0.5rem 0.7rem 0.5rem;
+            }
+            .remedy-header img {
+                width: 54px;
+                height: 54px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo 2025-05-15 .jpg" alt="Cure From Pure Logo">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="remedies.html" class="active">🌿 Remedies</a></li>
+                <li><a href="about.html">ℹ️ About</a></li>
+                <li><a href="products.html">💊 Products</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-remedies">
+        <h1>Home Remedies Guide</h1>
+        <p>Discover natural solutions for everyday health and wellness.</p>
+    </section>
+
+    <!-- Remedies Grid -->
+    <main>
+        <div class="remedies-grid">
+            <section class="remedy-card" id="turmeric">
+                <div class="remedy-header">
+                    <img src="images/Turmeric.jpg" alt="Turmeric">
+                    <h2>Turmeric</h2>
+                </div>
+                <div class="remedy-content">
+                    <h3>Home Uses:</h3>
+                    <ul>
+                        <li>Mix 1 tsp with warm milk for inflammation relief</li>
+                        <li>Create a paste with water for wound healing</li>
+                        <li>Add to meals for immune support</li>
+                    </ul>
+                    <h3>Benefits:</h3>
+                    <p>Powerful anti-inflammatory, antioxidant, and may help with arthritis pain.</p>
+                </div>
+            </section>
+            <section class="remedy-card" id="neem">
+                <div class="remedy-header">
+                    <img src="images/neem_leaves_large.jpg" alt="Neem">
+                    <h2>Neem</h2>
+                </div>
+                <div class="remedy-content">
+                    <h3>Home Uses:</h3>
+                    <ul>
+                        <li>Boil leaves for skin washes</li>
+                        <li>Make toothpaste with neem powder</li>
+                        <li>Use oil for scalp treatments</li>
+                    </ul>
+                    <h3>Benefits:</h3>
+                    <p>Antibacterial, antifungal, great for skin conditions and oral health.</p>
+                </div>
+            </section>
+            <section class="remedy-card" id="ginger">
+                <div class="remedy-header">
+                    <img src="images/ginger.jpg" alt="Ginger">
+                    <h2>Ginger</h2>
+                </div>
+                <div class="remedy-content">
+                    <h3>Home Uses:</h3>
+                    <ul>
+                        <li>Make ginger tea for nausea</li>
+                        <li>Chew raw for motion sickness</li>
+                        <li>Add to meals for digestion</li>
+                    </ul>
+                    <h3>Benefits:</h3>
+                    <p>Relieves nausea, aids digestion, and has anti-inflammatory properties.</p>
+                </div>
+            </section>
+            <section class="remedy-card" id="aloe-vera">
+                <div class="remedy-header">
+                    <img src="images/aloe-vera.jpg" alt="Aloe Vera">
+                    <h2>Aloe Vera</h2>
+                </div>
+                <div class="remedy-content">
+                    <h3>Home Uses:</h3>
+                    <ul>
+                        <li>Apply gel directly to burns</li>
+                        <li>Use as face mask for acne</li>
+                        <li>Drink juice for digestion</li>
+                    </ul>
+                    <h3>Benefits:</h3>
+                    <p>Soothes skin, promotes healing, and supports digestive health.</p>
+                </div>
+            </section>
+            <section class="remedy-card" id="honey">
+                <div class="remedy-header">
+                    <img src="images/honey.jpg" alt="Honey">
+                    <h2>Honey</h2>
+                </div>
+                <div class="remedy-content">
+                    <h3>Home Uses:</h3>
+                    <ul>
+                        <li>Take 1 tsp for sore throat</li>
+                        <li>Mix with lemon for cough</li>
+                        <li>Apply to wounds as antibacterial</li>
+                    </ul>
+                    <h3>Benefits:</h3>
+                    <p>Natural antibacterial, cough suppressant, and wound healer.</p>
+                </div>
+            </section>
+            <section class="remedy-card" id="garlic">
+                <div class="remedy-header">
+                    <img src="images/garlic.jpg" alt="Garlic">
+                    <h2>Garlic</h2>
+                </div>
+                <div class="remedy-content">
+                    <h3>Home Uses:</h3>
+                    <ul>
+                        <li>Eat raw for immune boost</li>
+                        <li>Make garlic oil for earaches</li>
+                        <li>Use in cooking for health benefits</li>
+                    </ul>
+                    <h3>Benefits:</h3>
+                    <p>Boosts immunity, fights infections, and supports heart health.</p>
+                </div>
+            </section>
+            <section class="remedy-card" id="cinnamon">
+                <div class="remedy-header">
+                    <img src="images/cinnamon.jpg" alt="Cinnamon">
+                    <h2>Cinnamon</h2>
+                </div>
+                <div class="remedy-content">
+                    <h3>Home Uses:</h3>
+                    <ul>
+                        <li>Add to tea for blood sugar</li>
+                        <li>Mix with honey for colds</li>
+                        <li>Use in cooking for flavor</li>
+                    </ul>
+                    <h3>Benefits:</h3>
+                    <p>Regulates blood sugar, anti-inflammatory, and antimicrobial.</p>
+                </div>
+            </section>
+            <section class="remedy-card" id="peppermint">
+                <div class="remedy-header">
+                    <img src="images/peppermint.jpg" alt="Peppermint">
+                    <h2>Peppermint</h2>
+                </div>
+                <div class="remedy-content">
+                    <h3>Home Uses:</h3>
+                    <ul>
+                        <li>Make tea for digestion</li>
+                        <li>Inhale oil for headaches</li>
+                        <li>Use as mouthwash</li>
+                    </ul>
+                    <h3>Benefits:</h3>
+                    <p>Relieves headaches, aids digestion, and freshens breath.</p>
+                </div>
+            </section>
+            <section class="remedy-card" id="chamomile">
+                <div class="remedy-header">
+                    <img src="images/chamomile.jpg" alt="Chamomile">
+                    <h2>Chamomile</h2>
+                </div>
+                <div class="remedy-content">
+                    <h3>Home Uses:</h3>
+                    <ul>
+                        <li>Drink tea before bed</li>
+                        <li>Use as eye compress</li>
+                        <li>Add to bath for relaxation</li>
+                    </ul>
+                    <h3>Benefits:</h3>
+                    <p>Promotes sleep, reduces anxiety, and soothes skin irritation.</p>
+                </div>
+            </section>
+            <section class="remedy-card" id="eucalyptus">
+                <div class="remedy-header">
+                    <img src="images/eucalyptus.jpeg" alt="Eucalyptus">
+                    <h2>Eucalyptus</h2>
+                </div>
+                <div class="remedy-content">
+                    <h3>Home Uses:</h3>
+                    <ul>
+                        <li>Inhale steam with oil for congestion</li>
+                        <li>Use in diffuser for respiratory relief</li>
+                        <li>Apply diluted oil to chest for colds</li>
+                    </ul>
+                    <h3>Benefits:</h3>
+                    <p>Clears sinuses, relieves cough, and has antimicrobial properties.</p>
+                </div>
+            </section>
+        </div>
+        <div class="back-to-top">
+            <a href="#"><i class="fas fa-arrow-up"></i> Back to Top</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Health Remedies. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cure From Pure - Natural health solutions">
+    <title>Cure From Pure - Natural Health Products</title>
+    <link rel="stylesheet" href="styles-new.css">
+    <link rel="stylesheet" href="styles-footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Include header template -->
+    <div id="header-placeholder"></div>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Welcome to Cure From Pure</h1>
+            <p>Discover natural solutions for your health and wellness</p>
+            <a href="products.html" class="btn btn-primary">Explore Products</a>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="grid grid-3">
+                <!-- Product cards will be added here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Include footer template -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load header template
+        fetch('templates/header.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header-placeholder').innerHTML = html;
+            });
+        
+        // Load footer template
+        fetch('templates/footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer-placeholder').innerHTML = html;
+            });
+    </script>
+</body>
+</html>

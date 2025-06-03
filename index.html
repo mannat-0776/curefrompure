@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="t8BPja8ek5WmidZHSD9imxVP3cACrpH6ELl6bfokhFU" />
+    <title>Home - Health Remedies</title>
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="index.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header sticky">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo 2025-05-15 .jpg" alt="Cure From Pure Logo">
+            </a>
+        </div>
+        <nav class="nav-right"></nav>
+        <ul class="nav-links">
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="about.html">ℹ️ About</a></li>
+            <li><a href="products.html">💊 Products</a></li>
+            <li><a href="profile.html">👤 Profile</a></li>
+            <li><a href="blog.html">📝 Blog</a></li>
+            <li><a href="login.html">🔑 Login</a></li>
+            <li><a href="contact.html">📧 Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find Natural & Trusted Remedies</h1>
+            <p>Home remedies and pharmacy medicines tailored for you</p>
+            <a href="#features" class="hero-btn">Explore Remedies</a>
+        </div>
+    </section>
+
+    <!-- Search Box (Smart Assistant Preview) -->
+    <section class="search-section">
+        <form class="search-form" action="symptom-checker.html" method="get">
+            <input type="text" name="q" placeholder="What are your symptoms?" aria-label="Search symptoms">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <a href="products.html" style="text-decoration: none; color: inherit;">
+            <div class="feature-box">
+                <i class="fas fa-leaf" style="font-size: 2.5rem; color: #3cba54; margin-bottom: 1rem;"></i>
+                <h3>Natural Remedies</h3>
+                <p>Curated from Ayurveda and traditional wisdom.</p>
+            </div>
+        </a>
+        <div class="feature-box">
+            <a href="remedies.html" style="text-decoration: none; color: inherit;">
+            <i class="fas fa-seedling" style="font-size: 2.5rem; color: #8bc34a; margin-bottom: 1rem;"></i>
+            <h3>Products</h3>
+            <p>Curated from Ayurveda and traditional wisdom.</p>
+            </a>
+        </div>
+        </a>
+        <div class="feature-box">
+            <a href="compare.html" style="text-decoration: none; color: inherit;">
+                <i class="fas fa-prescription-bottle-alt"
+                    style="font-size: 2.5rem; color: #1e5fa8; margin-bottom: 1rem;"></i>
+                <h3>Pharmacy Guide</h3>
+                <p>Compare home remedies with modern medicines.</p>
+            </a>
+        </div>
+        <div class="feature-box">
+            <a href="symptom-checker.html" style="text-decoration: none; color: inherit;">
+                <i class="fas fa-robot" style="font-size: 2.5rem; color: #ff9800; margin-bottom: 1rem;"></i>
+                <h3>Smart Assistant</h3>
+                <p>Personalized suggestions for your symptoms.</p>
+            </a>
+        </div>
+    </section>
+    <!-- Remedies Grid Section -->
+    <section class="remedies-grid">
+        <div class="card card--small card-turmeric">
+            <a href="remedies.html">
+                <img src="images/Turmeric.jpg" alt="Turmeric" class="card-img">
+                <h4 class="card-title">Turmeric</h4>
+                <p class="card-text">Reduces inflammation and boosts immunity</p>
+            </a>
+        </div>
+        <div class="card card--small card-neem">
+            <a href="remedies.html">
+                <img src="images/neem_leaves_large.jpg" alt="Neem" class="card-img">
+                <h4 class="card-title">Neem</h4>
+                <p class="card-text">Effective for treating acne and skin health</p>
+            </a>
+        </div>
+        <div class="card card--small card-ginger">
+            <a href="remedies.html">
+                <img src="images/ginger.jpg" alt="Ginger" class="card-img">
+                <h4 class="card-title">Ginger</h4>
+                <p class="card-text">Aids digestion and relieves nausea</p>
+            </a>
+        </div>
+        <div class="card card--small card-aloe">
+            <a href="remedies.html">
+                <img src="images/aloe-vera.jpg" alt="Aloe Vera" class="card-img">
+                <h4 class="card-title">Aloe Vera</h4>
+                <p class="card-text">Soothes burns and promotes skin healing</p>
+            </a>
+        </div>
+        <div class="card card--small card-honey">
+            <a href="remedies.html">
+                <img src="images/honey.jpg" alt="Honey" class="card-img">
+                <h4 class="card-title">Honey</h4>
+                <p class="card-text">Natural antibacterial and cough suppressant</p>
+            </a>
+        </div>
+        <div class="card card--small card-garlic">
+            <a href="remedies.html">
+                <img src="images/garlic.jpg" alt="Garlic" class="card-img">
+                <h4 class="card-title">Garlic</h4>
+                <p class="card-text">Boosts immunity and fights infections</p>
+            </a>
+        </div>
+        <div class="card card--small card-cinnamon">
+            <a href="remedies.html">
+                <img src="images/cinnamon.jpg" alt="Cinnamon" class="card-img">
+                <h4 class="card-title">Cinnamon</h4>
+                <p class="card-text">Regulates blood sugar and reduces inflammation</p>
+            </a>
+        </div>
+        <div class="card card--small card-peppermint">
+            <a href="remedies.html">
+                <img src="images/peppermint.jpg" alt="Peppermint" class="card-img">
+                <h4 class="card-title">Peppermint</h4>
+                <p class="card-text">Relieves headaches and digestive issues</p>
+            </a>
+        </div>
+        <div class="card card--small card-chamomile">
+            <a href="remedies.html">
+                <img src="images/chamomile.jpg" alt="Chamomile" class="card-img">
+                <h4 class="card-title">Chamomile</h4>
+                <p class="card-text">Promotes relaxation and better sleep</p>
+            </a>
+        </div>
+        <div class="card card--small card-eucalyptus">
+            <a href="remedies.html">
+                <img src="images/eucalyptus.jpeg" alt="Eucalyptus" class="card-img">
+                <h4 class="card-title">Eucalyptus</h4>
+                <p class="card-text">Relieves respiratory congestion</p>
+            </a>
+        </div>
+    </section>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: #f7fafc;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 2px 12px rgba(60, 132, 206, 0.06);
+            padding: 0.5rem 2vw;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo img {
+            height: 48px;
+            border-radius: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #3c84ce;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s;
+            padding: 0.3em 0.7em;
+            border-radius: 6px;
+        }
+
+        .nav-links a:hover {
+            background: #e3f0ff;
+            color: #245fa5;
+        }
+
+        .hero {
+            width: 100%;
+            background: linear-gradient(120deg, #e3f0ff 0%, #f7fafc 100%);
+            padding: 64px 0 48px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #245fa5;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: #3c84ce;
+            margin-bottom: 28px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: #3c84ce;
+            color: #fff;
+            padding: 0.8em 2em;
+            border-radius: 2em;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(60, 132, 206, 0.10);
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .hero-btn:hover {
+            background: #245fa5;
+            transform: translateY(-2px) scale(1.04);
+        }
+
+        .search-section {
+            display: flex;
+            justify-content: center;
+            margin: -32px 0 32px 0;
+            z-index: 2;
+            position: relative;
+        }
+
+        .search-form {
+            display: flex;
+            background: #fff;
+            border-radius: 2em;
+            box-shadow: 0 2px 8px rgba(60, 132, 206, 0.08);
+            overflow: hidden;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .search-form input {
+            border: none;
+            padding: 0.9em 1.2em;
+            font-size: 1rem;
+            outline: none;
+            flex: 1;
+            background: transparent;
+        }
+
+        .search-form button {
+            background: #3c84ce;
+            color: #fff;
+            border: none;
+            padding: 0 1.2em;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search-form button:hover {
+            background: #245fa5;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin: 48px 0 32px 0;
+            flex-wrap: wrap;
+        }
+
+        .feature-box {
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 2px 8px rgba(60, 132, 206, 0.08);
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+            text-align: center;
+            width: 220px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-box img {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1rem;
+        }
+
+        .feature-box h3 {
+            font-size: 1.15rem;
+            color: #245fa5;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-box p {
+            color: #444;
+            font-size: 0.98rem;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-6px) scale(1.04);
+            box-shadow: 0 6px 24px rgba(60, 132, 206, 0.13);
+        }
+
+        .remedies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .card--small {
+            border-radius: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 1rem;
+            background: #fff;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            min-width: 0;
+        }
+
+        .card--small:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 0.7rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .card-title {
+            margin: 0.5rem 0 0.2rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 0.5rem;
+        }
+
+        .favorite-btn {
+            position: absolute;
+            top: 0.7rem;
+            right: 0.7rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #e57373;
+            transition: color 0.2s;
+        }
+
+        .favorite-btn:hover {
+            color: #c62828;
+        }
+
+        /* Card backgrounds */
+        .card-turmeric {
+            background: #fffbe7;
+        }
+
+        .card-neem {
+            background: #e7ffe7;
+        }
+
+        .card-ginger {
+            background: #fff3e7;
+        }
+
+        .card-aloe {
+            background: #e7fff8;
+        }
+
+        .card-honey {
+            background: #fffbe7;
+        }
+
+        .card-garlic {
+            background: #f9f9f9;
+        }
+
+        .card-cinnamon {
+            background: #fbeee7;
+        }
+
+        .card-peppermint {
+            background: #e7f7ff;
+        }
+
+        .card-chamomile {
+            background: #f9f7ff;
+        }
+
+        .card-eucalyptus {
+            background: #e7f9f7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: #f7fafc;
+            padding: 2.5rem 0 1.5rem 0;
+            text-align: center;
+        }
+
+        .testimonial-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 2px 8px rgba(60, 132, 206, 0.08);
+            padding: 1.5rem 1.2rem;
+            max-width: 260px;
+            text-align: center;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin-bottom: 0.7rem;
+            object-fit: cover;
+        }
+
+        .rating {
+            color: #fbc02d;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .author {
+            color: #245fa5;
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(120deg, #e3f0ff 0%, #f7fafc 100%);
+            text-align: center;
+            padding: 2.5rem 1rem;
+            margin: 2.5rem 0 0 0;
+            border-radius: 1.2rem;
+        }
+
+        .cta h2 {
+            font-size: 1.5rem;
+            color: #245fa5;
+            margin-bottom: 1.2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #3c84ce;
+            color: #fff;
+            padding: 0.8em 2em;
+            border-radius: 2em;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(60, 132, 206, 0.10);
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background: #245fa5;
+            transform: translateY(-2px) scale(1.04);
+        }
+
+        /* Footer */
+        footer {
+            background: #fff;
+            padding: 1.5rem 0 0.7rem 0;
+            text-align: center;
+            border-top: 1px solid #e3f0ff;
+            margin-top: 2rem;
+        }
+
+        .footer-links {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-links a {
+            color: #3c84ce;
+            margin: 0 0.7rem;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #245fa5;
+        }
+
+        .footer-social {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-social a {
+            color: #3c84ce;
+            margin: 0 0.4rem;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+
+        .footer-social a:hover {
+            color: #245fa5;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 900px) {
+            .features {
+                gap: 1.2rem;
+            }
+
+            .feature-box {
+                width: 180px;
+                padding: 1.2rem 0.7rem 1rem 0.7rem;
+            }
+
+            .remedies-grid {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0.5rem 1vw;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 0.7rem;
+            }
+
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .remedies-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+
+            .card--small {
+                padding: 0.7rem;
+            }
+
+            .card-title {
+                font-size: 1rem;
+            }
+
+            .card-text {
+                font-size: 0.9rem;
+            }
+
+            .card-img {
+                height: 70px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 32px 0 18px 0;
+            }
+
+            .hero-content h1 {
+                font-size: 1.15rem;
+            }
+
+            .hero-content p {
+                font-size: 0.95rem;
+            }
+
+            .features {
+                gap: 0.5rem;
+            }
+
+            .feature-box {
+                width: 100%;
+                padding: 1rem 0.5rem 0.7rem 0.5rem;
+            }
+
+            .remedies-grid {
+                grid-template-columns: 1fr;
+                gap: 0.7rem;
+            }
+
+            .card--small {
+                padding: 0.5rem;
+            }
+
+            .card-title {
+                font-size: 0.98rem;
+            }
+
+            .card-img {
+                height: 55px;
+            }
+        }
+    </style>
+
+    <!-- Seasonal Tips -->
+    <section class="seasonal-tip">
+        <h3>Seasonal Health Tip</h3>
+        <div class="seasonal-card">
+            <p>Stay healthy this season with our expert tips and natural remedies.</p>
+            <a href="seasonal-tips.html" class="btn">Find Out More</a>
+        </div>
+        <div class="tip-content" id="seasonal-tip">
+            <!-- Will be populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Call to Action (CTA) -->
+    <section class="seasonal-tip">
+        <h3>Ready to explore the best remedies?</h3>
+        <div class="seasonal-card">
+            <p>Discover more natural and effective solutions for your health needs.</p>
+            <a href="solutions.html" class="btn">Explore More</a>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <img src="images/anime girl.jpg" alt="User 1" class="testimonial-avatar">
+                <div class="rating">★★★★★</div>
+                <p>"Helped me recover faster! Highly recommended."</p>
+                <div class="author">- Sarah J.</div>
+            </div>
+            <div class="testimonial-card">
+                <img src="images/Anime boy.jpg" alt="User 2" class="testimonial-avatar">
+                <div class="rating">★★★★★</div>
+                <p>"Easy to use and very informative."</p>
+                <div class="author">- Michael T.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="blog.html">Blog</a>
+        </div>
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <p>
+            <i class="far fa-copyright"></i> 2025 Health Remedies. All Rights Reserved.
+        </p>
+        <p>
+            <i class="fas fa-user-graduate"></i> Made by Government Polytechnic Student
+        </p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Instant Morning Exercises - Exercise Planner</title>
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="index.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+    /* Card container and card style */
+    .card-container {
+        max-width: 1000px;
+        margin: 40px auto 40px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        z-index: 1;
+        position: relative;
+    }
+    .card {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px rgba(60,132,206,0.10), 0 1.5px 6px rgba(0,0,0,0.04);
+        padding: 32px 28px;
+        transition: 
+            box-shadow 0.3s cubic-bezier(.4,2,.6,1),
+            border 0.3s cubic-bezier(.4,2,.6,1);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+    }
+    .card h2 {
+        margin-top: 0;
+    }
+    .video-container {
+        margin: 16px 0;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(60,132,206,0.08);
+    }
+    .benefits-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+    .benefit-card {
+        flex: 1 1 250px;
+        background: #f0f8ff;
+        border-radius: 8px;
+        padding: 16px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+        display: flex;
+        align-items: flex-start;
+        min-width: 220px;
+    }
+    .benefit-icon {
+        font-size: 1.5em;
+        margin-right: 10px;
+    }
+    .call-to-action {
+        background: linear-gradient(90deg, #3c84ce 60%, #30eee2 100%);
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.2em;
+        text-align: center;
+        padding: 24px 16px;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 0 2px 12px rgba(60,132,206,0.12);
+        transition: background 0.2s;
+        margin-top: 16px;
+    }
+    .call-to-action:hover {
+        background: linear-gradient(90deg, #30eee2 0%, #3c84ce 100%);
+    }
+    blockquote {
+        border-left: 4px solid #3c84ce;
+        margin: 16px 0;
+        padding-left: 16px;
+        color: #3c84ce;
+        font-style: italic;
+        background: #f7fbff;
+        border-radius: 6px;
+    }
+    @media (max-width: 700px) {
+        .card-container {
+            padding: 0 8px;
+        }
+        .card {
+            padding: 18px 8px;
+        }
+        .benefits-grid {
+            flex-direction: column;
+        }
+    }
+    .card:hover {
+        box-shadow:
+            0 0 16px 4px #30eee2,
+            0 4px 24px rgba(60,132,206,0.10),
+            0 1.5px 6px rgba(0,0,0,0.04);
+        border: 2px solid #30eee2;
+        /* Neon glow effect */
+        filter: drop-shadow(0 0 8px #30eee2) drop-shadow(0 0 16px #3c84ce);
+        z-index: 2;
+    }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="area">
+        <ul class="circles">
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+        </ul>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/Cure From Pure.JPG" alt="Cure From Pure Logo">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="about.html">ℹ️ About</a></li>
+                <li><a href="products.html">💊 Products</a></li>
+                <li><a href="blog.html">📝 Blog</a></li>
+                <li><a href="login.html">🔑 Login</a></li>
+                <li><a href="contact.html">📧 Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div style="text-align:center;margin-bottom:32px;">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" 
+                 alt="Morning Exercise" 
+                 style="max-width:100%;height:auto;border-radius:18px;box-shadow:0 4px 16px rgba(60,132,206,0.10);">
+        </div>
+        <div class="card-container">
+            <section class="card">
+                <h2>Why Morning Exercise is Challenging</h2>
+                <p>Many people struggle to find time for exercise in the morning due to busy schedules, early commitments, or simply feeling too tired. According to recent studies, over 60% of adults report lack of time as the main barrier to regular exercise.</p>
+                <p>However, staying active is essential for maintaining good health, boosting energy, and improving mental clarity throughout the day.</p>
+                <p>Fortunately, you don't need long workout sessions to stay fit. Instant exercises can be done quickly and effectively, even if you have just a few minutes.</p>
+            </section>
+            <section class="card">
+                <h2>What Are Instant Exercises?</h2>
+                <p>Instant exercises are short, high-impact movements that can be performed anywhere without equipment. They are designed to maximize benefits in minimal time, making them perfect for busy mornings.</p>
+                <p>These exercises focus on multiple muscle groups and cardiovascular health, helping you stay fit without sacrificing your schedule.</p>
+            </section>
+            <section class="card">
+                <h2>Top 10 Instant Morning Exercises with Videos</h2>
+                <p>Learn how to perform these instant exercises correctly and safely by watching the videos alongside the descriptions:</p>
+                <div>
+                    <h3>1. Jumping Jacks</h3>
+                    <p>A full-body warm-up that increases heart rate and circulation.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/c4DAnQ6DtF8" title="Jumping Jacks Exercise" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div>
+                    <h3>2. Push-ups</h3>
+                    <p>Strengthen your chest, shoulders, and triceps.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/IODxDxX7oi4" title="Push-ups Exercise" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div>
+                    <h3>3. Bodyweight Squats</h3>
+                    <p>Tone your legs, glutes, and core muscles.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/aclHkVaku9U" title="Bodyweight Squats Exercise" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div>
+                    <h3>4. Plank</h3>
+                    <p>Builds core strength and improves posture.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/pSHjTRCQxIw" title="Plank Exercise" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div>
+                    <h3>5. High Knees</h3>
+                    <p>Boost cardiovascular endurance and leg strength.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/OAJ_J3EZkdY" title="High Knees Exercise" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div>
+                    <h3>6. Lunges</h3>
+                    <p>Enhance balance and strengthen lower body muscles.</p>
+                    <div class="video-container"></div>
+                        <iframe src="https://www.youtube.com/embed/QOVaHwm-Q6U" title="Lunges Exercise" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div>
+                    <h3>7. Mountain Climbers</h3>
+                    <p>A dynamic exercise that targets multiple muscle groups.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/nmwgirgXLYM" title="Mountain Climbers Exercise" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div>
+                    <h3>8. Burpees</h3>
+                    <p>A full-body exercise that improves strength and cardio fitness.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/TJp3bEZzBrA" title="Burpees Exercise" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div>
+                    <h3>9. Wall Sit</h3>
+                    <p>Builds endurance in the lower body muscles.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/-cdph8hv0O0" title="Wall Sit Exercise" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div>
+                    <h3>10. Glute Bridges</h3>
+                    <p>Strengthen your glutes and lower back.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/wPM8icPu6H8" title="Glute Bridges Exercise" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+            <section class="card">
+                <h2>How to Incorporate Instant Exercises into Your Morning</h2>
+                <ul>
+                    <li>Set a specific time each morning for your routine, even if it's just 5-10 minutes.</li>
+                    <li>Start with a warm-up like jumping jacks or light stretching.</li>
+                    <li>Choose 3-5 exercises from the list and perform each for 30-60 seconds.</li>
+                    <li>Rest for 15-30 seconds between exercises.</li>
+                    <li>Finish with a cool-down stretch to relax your muscles.</li>
+                    <li>Gradually increase the duration or intensity as you build strength.</li>
+                </ul>
+            </section>
+            <section class="card">
+                <h2>Benefits of Instant Morning Exercises</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card"><span class="benefit-icon">⏱️</span><div><strong>Time-efficient:</strong> Fits easily into busy mornings without disrupting your schedule.</div></div>
+                    <div class="benefit-card"><span class="benefit-icon">🔥</span><div><strong>Boosts metabolism:</strong> Helps burn calories throughout the day, aiding weight management.</div></div>
+                    <div class="benefit-card"><span class="benefit-icon">😊</span><div><strong>Improves mood:</strong> Releases endorphins that reduce stress, anxiety, and depression.</div></div>
+                    <div class="benefit-card"><span class="benefit-icon">⚡</span><div><strong>Enhances energy levels:</strong> Prepares you mentally and physically for the day ahead.</div></div>
+                    <div class="benefit-card"><span class="benefit-icon">❤️</span><div><strong>Supports cardiovascular health:</strong> Strengthens your heart and lungs.</div></div>
+                    <div class="benefit-card"><span class="benefit-icon">🤸</span><div><strong>Improves flexibility and balance:</strong> Reduces risk of injury and enhances mobility.</div></div>
+                    <div class="benefit-card"><span class="benefit-icon">🛌</span><div><strong>Promotes better sleep:</strong> Regular exercise helps regulate sleep patterns.</div></div>
+                    <div class="benefit-card"><span class="benefit-icon">💪</span><div><strong>Builds muscle strength:</strong> Helps maintain muscle mass and bone density.</div></div>
+                    <div class="benefit-card"><span class="benefit-icon">🧠</span><div><strong>Increases focus and productivity:</strong> Exercise stimulates brain function and concentration.</div></div>
+                    <div class="benefit-card"><span class="benefit-icon">🌅</span><div><strong>Encourages healthy habits:</strong> Starting your day with exercise sets a positive tone.</div></div>
+                    <div class="benefit-card"><span class="benefit-icon">👨‍👩‍👧‍👦</span><div><strong>Can be done with family:</strong> Involves loved ones and builds a supportive environment.</div></div>
+                    <div class="benefit-card"><span class="benefit-icon">🆓</span><div><strong>No equipment needed:</strong> Most instant exercises use just your body weight.</div></div>
+                    <div class="benefit-card"><span class="benefit-icon">🏡</span><div><strong>Convenient at home:</strong> No need to travel to a gym or fitness center.</div></div>
+                    <div class="benefit-card"><span class="benefit-icon">📈</span><div><strong>Easy to track progress:</strong> Short routines make it simple to monitor improvements.</div></div>
+                    <div class="benefit-card"><span class="benefit-icon">🕒</span><div><strong>Reduces procrastination:</strong> Quick sessions make it easier to start and stick with the habit.</div></div>
+                </div>
+            </section>
+            <section class="card">
+                <h2>Common Challenges and How to Overcome Them</h2>
+                <ul>
+                    <li><strong>Lack of motivation:</strong> Set realistic goals and track your progress.</li>
+                    <li><strong>Feeling too tired:</strong> Try gentle exercises or start with just 2-3 minutes.</li>
+                    <li><strong>Distractions:</strong> Create a dedicated space for your routine and minimize interruptions.</li>
+                    <li><strong>Inconsistent schedule:</strong> Use reminders or alarms to build a habit.</li>
+                    <li><strong>Physical limitations:</strong> Modify exercises to suit your ability and consult a professional if needed.</li>
+                </ul>
+            </section>
+            <section class="card">
+                <h2>Motivational Tips to Keep You Going</h2>
+                <blockquote>
+                    "The journey of a thousand miles begins with a single step." – Lao Tzu
+                </blockquote>
+                <p>Remember, consistency is key. Even a few minutes of exercise daily can lead to significant health improvements over time.</p>
+                <p>Celebrate small victories and reward yourself for sticking to your routine.</p>
+            </section>
+            <section class="card call-to-action" onclick="alert('Start your instant exercise routine now!')">
+                Ready to get fit? Start your instant morning exercises today!
+            </section>
+        </div>
+    </main>
+</body>
+</html>

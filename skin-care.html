@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Care - Health Remedies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Playfair Display', serif;
+    }
+    #header{
+      margin:20px;
+    }
+    #header>h1{
+      text-align:center;
+      font-size:3rem;
+    }
+    #header>p{
+      text-align:center;
+      font-size:1.5rem;
+      font-style:italic;
+    }
+    .container{
+      width:100vw;
+      display:flex;
+      justify-content:space-around;
+      flex-wrap:wrap;
+      padding:40px 20px;
+    }
+    .card{
+      display:flex;
+      flex-direction:column;
+      width:400px;
+      margin-bottom:60px;
+    }
+    .card>div{
+      box-shadow:0 15px 20px 0 rgba(0,0,0,0.5);
+    }
+    .card-image{
+      width:400px;
+      height:250px;
+    }
+    .card-image>img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+    }
+    .card-text{
+      margin:-30px auto;
+      margin-bottom:-50px;
+      height:300px;
+      width:300px;
+      background-color:#1D1C20;
+      color:#fff;
+      padding:20px;
+    }
+    .card-meal-type{
+      font-style:italic;
+    }
+    .card-title{
+      font-size:2.2rem;
+      margin-bottom:20px;
+      margin-top:5px;
+    }
+    .card-body{
+      font-size:1.25rem;
+    }
+    .card-price{
+      width:100px;
+      height:100px;
+      background-color:#970C0A;
+      color:#fff;
+      margin-left:auto;
+      font-size:2rem;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        width:90vw;
+      }
+      .card-image, .card-text {
+        width:90vw;
+        max-width:400px;
+      }
+    }
+    </style>
+</head>
+<body>
+    <!-- Animated Background like index -->
+    <div class="area">
+        <ul class="circles">
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+        </ul>
+    </div>
+    <!-- Navigation Bar (like index) -->
+    <header class="header" style="background:rgba(29,28,32,0.95);padding:0;">
+        <div class="logo" style="display:flex;align-items:center;justify-content:center;padding:10px 0;">
+            <a href="index.html">
+                <img src="images/Cure From Pure.JPG" alt="Cure From Pure Logo" style="height:48px;border-radius:8px;">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links" style="display:flex;justify-content:center;gap:32px;list-style:none;margin:0;padding:0 0 12px 0;">
+                <li><a href="index.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Home</a></li>
+                <li><a href="about.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">About</a></li>
+                <li><a href="products.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Products</a></li>
+                <li><a href="solutions.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Solutions</a></li>
+                <li><a href="blog.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Blog</a></li>
+                <li><a href="contact.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Back Arrow to Solutions -->
+    <div style="max-width:1000px;margin:30px auto 0 auto;">
+        <a href="solutions.html" style="display:inline-flex;align-items:center;color:#3c84ce;text-decoration:none;font-size:1.1rem;font-weight:600;">
+            <span style="font-size:1.6rem;line-height:1;margin-right:8px;">&#8592;</span> Back to Solutions
+        </a>
+    </div>
+<div id="header">
+    <h1>Skin Care</h1>
+    <p>Simple steps for healthy, glowing skin</p>
+</div>
+<div class="container">
+    <div class="card">
+      <div class="card-image">
+        <img src="images/1Skin Care.jpeg" alt="Gentle Cleanser">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Cleanse</p>
+        <h2 class="card-title">Wash Your Face</h2>
+        <p class="card-body">Wash your face every morning and night with a gentle cleanser to remove dirt and oil.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Moisturize.jpeg" alt="Moisturizer">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Moisturize</p>
+        <h2 class="card-title">Use Moisturizer</h2>
+        <p class="card-body">Apply moisturizer after washing your face to keep your skin soft and prevent dryness.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Wear Sunscreen.jpeg" alt="Sunscreen">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Protect</p>
+        <h2 class="card-title">Wear Sunscreen</h2>
+        <p class="card-body">Use sunscreen every day, even when it’s cloudy, to protect your skin from sun damage.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Healthy Foods.jpeg" alt="Healthy Diet">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Eat Well</p>
+        <h2 class="card-title">Healthy Foods</h2>
+        <p class="card-body">Eat fruits, vegetables, and healthy fats. Good food helps your skin look and feel better.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/drinking healthy water.jpeg" alt="Stay Hydrated">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Hydrate</p>
+        <h2 class="card-title">Drink Water</h2>
+        <p class="card-body">Drink enough water every day. Hydrated skin looks fresh and healthy.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Remove Dead Skin.jpg" alt="Gentle Exfoliation">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Exfoliate</p>
+        <h2 class="card-title">Remove Dead Skin</h2>
+        <p class="card-body">Gently scrub your skin once a week to remove dead skin cells and help your skin glow.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Get Enough Sleep.jpeg" alt="Sleep Well">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Rest</p>
+        <h2 class="card-title">Get Enough Sleep</h2>
+        <p class="card-body">Try to sleep 7-9 hours each night. Good sleep helps your skin repair and look bright.</p>
+      </div>
+    </div>
+    <div class="container">
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Don’t Touch Your Face.jpeg" alt="Avoid Touching Face">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Prevent</p>
+        <h2 class="card-title">Don’t Touch Your Face</h2>
+        <p class="card-body">Keep your hands away from your face to avoid spreading germs and causing breakouts.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Change Pillowcase.jpg" alt="Clean Pillowcase">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Hygiene</p>
+        <h2 class="card-title">Change Pillowcase</h2>
+        <p class="card-body">Change your pillowcase often. Clean bedding helps keep your skin clear.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/d" alt="Don’t Pick Pimples">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Prevent</p>
+        <h2 class="card-title">Don’t Pick Pimples</h2>
+        <p class="card-body">Don’t squeeze or pick at pimples. This can cause scars and more breakouts.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/See a Skin Doctor.jpeg" alt="See a Dermatologist">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Advice</p>
+        <h2 class="card-title">See a Skin Doctor</h2>
+        <p class="card-body">If you have skin problems that don’t go away, talk to a dermatologist for help.</p>
+      </div>
+    </div>
+</div>
+</body>
+</html>

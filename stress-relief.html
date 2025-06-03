@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress Relief - Health Remedies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Playfair Display', serif;
+    }
+    #header{
+      margin:20px;
+    }
+    #header>h1{
+      text-align:center;
+      font-size:3rem;
+    }
+    #header>p{
+      text-align:center;
+      font-size:1.5rem;
+      font-style:italic;
+    }
+    .container{
+      width:100vw;
+      display:flex;
+      justify-content:space-around;
+      flex-wrap:wrap;
+      padding:40px 20px;
+      box-sizing:border-box;
+    }
+    .card{
+      display:flex;
+      flex-direction:column;
+      width:400px;
+      margin-bottom:60px;
+      background:transparent;
+    }
+    .card>div{
+      box-shadow:0 15px 20px 0 rgba(72, 249, 155, 0.5);
+    }
+    .card-image{
+      width:400px;
+      height:250px;
+    }
+    .card-image>img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+    }
+    .card-text{
+      margin:-30px auto;
+      margin-bottom:-50px;
+      height:320px;
+      width:300px;
+      background-color:#1D1C20;
+      color:#fff;
+      padding:20px;
+      box-sizing:border-box;
+      border-radius:16px;
+    }
+    .card-meal-type{
+      font-style:italic;
+    }
+    .card-title{
+      font-size:2.2rem;
+      margin-bottom:20px;
+      margin-top:5px;
+    }
+    .card-body{
+      font-size:1.15rem;
+    }
+    @media (max-width: 900px) {
+      #header > h1 {
+        font-size: 2rem;
+      }
+      #header > p {
+        font-size: 1.1rem;
+      }
+      .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 24px 4vw;
+      }
+      .card {
+        width: 95vw;
+        max-width: 400px;
+        margin-bottom: 36px;
+      }
+      .card-image,
+      .card-text {
+        width: 95vw;
+        max-width: 400px;
+      }
+      .card-text {
+        height: auto;
+        min-height: 220px;
+        margin: -30px auto -30px auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #header > h1 {
+        font-size: 1.3rem;
+      }
+      #header > p {
+        font-size: 1rem;
+      }
+      .container {
+        padding: 12px 2vw;
+      }
+      .card {
+        width: 99vw;
+        max-width: 99vw;
+        margin-bottom: 24px;
+      }
+      .card-image,
+      .card-text {
+        width: 99vw;
+        max-width: 99vw;
+      }
+      .card-image {
+        height: 180px;
+      }
+      .card-text {
+        padding: 14px;
+        font-size: 1em;
+        min-height: 120px;
+      }
+      .card-title {
+        font-size: 1.1rem;
+      }
+    }
+    </style>
+</head>
+<body>
+    <!-- Animated Background like index -->
+    <div class="area">
+        <ul class="circles">
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+        </ul>
+    </div>
+    <!-- Navigation Bar (like index) -->
+    <header class="header" style="background:rgba(29,28,32,0.95);padding:0;">
+        <div class="logo" style="display:flex;align-items:center;justify-content:center;padding:10px 0;">
+            <a href="index.html">
+                <img src="images/Cure From Pure.JPG" alt="Cure From Pure Logo" style="height:48px;border-radius:8px;">
+            </a>
+            <span style="color:#fff;font-size:1.5rem;font-weight:700;margin-left:14px;letter-spacing:1px;">Cure From Pure</span>
+        </div>
+        <nav>
+            <ul class="nav-links" style="display:flex;justify-content:center;gap:32px;list-style:none;margin:0;padding:0 0 12px 0;">
+                <li><a href="index.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Home</a></li>
+                <li><a href="about.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">About</a></li>
+                <li><a href="products.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Products</a></li>
+                <li><a href="solutions.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Solutions</a></li>
+                <li><a href="blog.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Blog</a></li>
+                <li><a href="contact.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Back Arrow to Solutions -->
+    <div style="max-width:1000px;margin:30px auto 0 auto;">
+        <a href="solutions.html" style="display:inline-flex;align-items:center;color:#3c84ce;text-decoration:none;font-size:1.1rem;font-weight:600;">
+            <span style="font-size:1.6rem;line-height:1;margin-right:8px;">&#8592;</span> Back to Solutions
+        </a>
+    </div>
+    <div id="header">
+        <h1>Stress Relief</h1>
+        <p>Easy ways to calm your mind and feel better every day</p>
+    </div>
+    <div class="container">
+        <div class="card">
+          <div class="card-image">
+            <img src="images/deep Breathe.jpeg" alt="Deep Breathing">
+          </div>
+          <div class="card-text">
+            <p class="card-meal-type">Breathe</p>
+            <h2 class="card-title">Deep Breathing</h2>
+            <p class="card-body">Take slow, deep breaths. Inhale through your nose, hold for a few seconds, and exhale slowly. Deep breathing helps your body relax and can quickly lower stress.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="images/Go for a Walk.jpeg" alt="Go for a Walk">
+          </div>
+          <div class="card-text">
+            <p class="card-meal-type">Move</p>
+            <h2 class="card-title">Go for a Walk</h2>
+            <p class="card-body">Walking, even for 10 minutes, can clear your mind and help you feel calmer. Moving your body releases feel-good chemicals that fight stress.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="images/Listen to Music.jpeg" alt="Listen to Music">
+          </div>
+          <div class="card-text">
+            <p class="card-meal-type">Music</p>
+            <h2 class="card-title">Listen to Music</h2>
+            <p class="card-body">Play your favorite songs. Calming music can slow your heart rate and help you feel peaceful. Singing along or dancing can boost your mood even more.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="images/Talk to Someone.jpeg" alt="Talk to Someone">
+          </div>
+          <div class="card-text">
+            <p class="card-meal-type">Connect</p>
+            <h2 class="card-title">Talk to Someone</h2>
+            <p class="card-body">Share your feelings with a friend or family member. Talking about your worries can make them feel lighter and remind you that you’re not alone.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="images/drinking healthy water.jpeg" alt="Drink Water">
+          </div>
+          <div class="card-text">
+            <p class="card-meal-type">Hydrate</p>
+            <h2 class="card-title">Drink Water</h2>
+            <p class="card-body">Drink a glass of water. Staying hydrated helps your body handle stress better and keeps your mind clear.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="images/Get Enough Sleep.jpeg" alt="Rest Well">
+          </div>
+          <div class="card-text">
+            <p class="card-meal-type">Rest</p>
+            <h2 class="card-title">Get Enough Sleep</h2>
+            <p class="card-body">Try to sleep 7-9 hours each night. Good sleep helps your mind and body recover from stress and keeps you feeling strong.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="images/Try Mindfulness.jpeg" alt="Mindfulness">
+          </div>
+          <div class="card-text">
+            <p class="card-meal-type">Mindful</p>
+            <h2 class="card-title">Try Mindfulness</h2>
+            <p class="card-body">Focus on the present moment. Notice your breath, sounds, or what you see. Mindfulness can help you feel calm and less overwhelmed.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="images/Limit Screen Time.jpeg" alt="Limit Screen Time">
+          </div>
+          <div class="card-text">
+            <p class="card-meal-type">Unplug</p>
+            <h2 class="card-title">Limit Screen Time</h2>
+            <p class="card-body">Take breaks from your phone, computer, or TV. Too much screen time can make stress worse. Try reading, drawing, or spending time outside instead.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="images/Spend Time Outside.jpeg" alt="Nature">
+          </div>
+          <div class="card-text">
+            <p class="card-meal-type">Nature</p>
+            <h2 class="card-title">Spend Time Outside</h2>
+            <p class="card-body">Go outside and enjoy nature. Fresh air, sunlight, and green spaces can help you relax and feel happier.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="images/Laugh.jpeg" alt="Laugh">
+          </div>
+          <div class="card-text">
+            <p class="card-meal-type">Laugh</p>
+            <h2 class="card-title">Find Something Funny</h2>
+            <p class="card-body">Watch a funny video, read jokes, or talk to someone who makes you laugh. Laughter is a natural way to reduce stress and boost your mood.</p>
+          </div>
+        </div>
+    </div>
+</body>
+</html>

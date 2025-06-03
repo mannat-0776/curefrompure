@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Health Remedies</title>
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="about-responsive.css"> <!-- Added responsive styles -->
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo 2025-05-15 .jpg" alt="Cure From Pure Logo">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="about.html">ℹ️ About</a></li>
+                <li><a href="products.html">💊 Products</a></li>
+                <li><a href="blog.html">📝 Blog</a></li>
+                <li><a href="login.html">🔑 Login</a></li>
+                <li><a href="contact.html">📧 Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Healing Naturally, Caring Wisely</h1>
+            <p>Discover the best natural and pharmacy remedies for your health.</p>
+        </div>
+    </section>
+
+    <!-- Featured Remedies Section -->
+    <section class="featured-remedies remedies-section">
+        <h2>Featured Remedies</h2>
+        <div class="grid">
+            <div class="card card--small">
+                <a href="remedies.html">
+                    <img src="images/Turmeric.jpg" alt="Turmeric" class="card-img">
+                    <h4 class="card-title">Turmeric</h4>
+                    <p class="card-text">Reduces inflammation and boosts immunity</p>
+                </a>
+                <button class="favorite-btn" data-remedy="Turmeric">
+                    <i class="far fa-heart"></i>
+                </button>
+            </div>
+            <div class="card card--small">
+                <a href="remedies.html">
+                    <img src="images/neem_leaves_large.jpg" alt="Neem" class="card-img">
+                    <h4 class="card-title">Neem</h4>
+                    <p class="card-text">Effective for treating acne and skin health</p>
+                </a>
+                <button class="favorite-btn" data-remedy="Neem">
+                    <i class="far fa-heart"></i>
+                </button>
+            </div>
+            <div class="card card--small">
+                <a href="remedies.html">
+                    <img src="images/ginger.jpg" alt="Ginger" class="card-img">
+                    <h4 class="card-title">Ginger</h4>
+                    <p class="card-text">Aids digestion and relieves nausea</p>
+                </a>
+                <button class="favorite-btn" data-remedy="Ginger">
+                    <i class="far fa-heart"></i>
+                </button>
+            </div>
+            <div class="card card--small">
+                <a href="remedies.html">
+                    <img src="images/aloe-vera.jpg" alt="Aloe Vera" class="card-img">
+                    <h4 class="card-title">Aloe Vera</h4>
+                    <p class="card-text">Soothes burns and promotes skin healing</p>
+                </a>
+                <button class="favorite-btn" data-remedy="Aloe Vera">
+                    <i class="far fa-heart"></i>
+                </button>
+            </div>
+            <div class="card card--small">
+                <a href="remedies.html">
+                    <img src="images/honey.jpg" alt="Honey" class="card-img">
+                    <h4 class="card-title">Honey</h4>
+                    <p class="card-text">Natural antibacterial and cough suppressant</p>
+                </a>
+                <button class="favorite-btn" data-remedy="Honey">
+                    <i class="far fa-heart"></i>
+                </button>
+            </div>
+            <div class="card card--small">
+                <a href="remedies.html">
+                    <img src="images/garlic.jpg" alt="Garlic" class="card-img">
+                    <h4 class="card-title">Garlic</h4>
+                    <p class="card-text">Boosts immunity and fights infections</p>
+                </a>
+                <button class="favorite-btn" data-remedy="Garlic">
+                    <i class="far fa-heart"></i>
+                </button>
+            </div>
+            <div class="card card--small">
+                <a href="remedies.html">
+                    <img src="images/cinnamon.jpg" alt="Cinnamon" class="card-img">
+                    <h4 class="card-title">Cinnamon</h4>
+                    <p class="card-text">Regulates blood sugar and reduces inflammation</p>
+                </a>
+                <button class="favorite-btn" data-remedy="Cinnamon">
+                    <i class="far fa-heart"></i>
+                </button>
+            </div>
+            <div class="card card--small">
+                <a href="remedies.html">
+                    <img src="images/peppermint.jpg" alt="Peppermint" class="card-img">
+                    <h4 class="card-title">Peppermint</h4>
+                    <p class="card-text">Relieves headaches and digestive issues</p>
+                </a>
+                <button class="favorite-btn" data-remedy="Peppermint">
+                    <i class="far fa-heart"></i>
+                </button>
+            </div>
+            <div class="card card--small">
+                <a href="remedies.html">
+                    <img src="images/chamomile.jpg" alt="Chamomile" class="card-img">
+                    <h4 class="card-title">Chamomile</h4>
+                    <p class="card-text">Promotes relaxation and better sleep</p>
+                </a>
+                <button class="favorite-btn" data-remedy="Chamomile">
+                    <i class="far fa-heart"></i>
+                </button>
+            </div>
+            <div class="card card--small">
+                <a href="remedies.html">
+                    <img src="images/eucalyptus.jpeg" alt="Eucalyptus" class="card-img">
+                    <h4 class="card-title">Eucalyptus</h4>
+                    <p class="card-text">Relieves respiratory congestion</p>
+                </a>
+                <button class="favorite-btn" data-remedy="Eucalyptus">
+                    <i class="far fa-heart"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Find the Best Solutions Section -->
+    <section class="best-solutions clickable" onclick="window.location.href='solutions.html'">
+        <h2>Find the Best Natural or Pharmacy Solutions</h2>
+        <div class="card">
+            <p>At Health Remedies, we provide a wide range of natural and pharmacy-based solutions to address your
+                health.</p>
+            <a href="solutions.html" class="learn-more">Explore Solutions</a>
+        </div>
+    </section>
+
+    <!-- Seasonal Tips -->
+    <section class="seasonal-tip">
+        <h3>Seasonal Health Tip</h3>
+        <div class="seasonal-card">
+            <p>Stay healthy this season with our expert tips and natural remedies.</p>
+            <a href="seasonal-tips.html" class="learn-more">Learn More</a>
+        </div>
+        <div class="tip-content" id="seasonal-tip">
+            <!-- Will be populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p>"The natural remedies here changed my life. I've never felt better!"</p>
+                <div class="author">- Sarah J.</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p>"Excellent service and high-quality products. Highly recommended!"</p>
+                <div class="author">- Michael T.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Section -->
+    <div id="login-container" class="login-container">
+        <form id="login-form" class="login-form">
+            <h2>Login</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit" id="login-button">Login</button>
+            <p id="login-error" class="error-message" style="display: none;">Invalid username or password</p>
+        </form>
+
+        <div class="google-login">
+            <h3>Or Sign in with Google</h3>
+            <div id="g_id_onload"
+                 data-client_id="1040321018000-ghl9uesv5gr3db1rgbuj521l18hqpta8.apps.googleusercontent.com"
+                 data-context="signin"
+                 data-ux_mode="popup"
+                 data-callback="handleGoogleSignIn"
+                 data-auto_prompt="false">
+            </div>
+            <div class="g_id_signin" data-type="standard"></div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Health Remedies. All Rights Reserved.</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

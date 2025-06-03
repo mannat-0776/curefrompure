@@ -1,0 +1,237 @@
+
+/* Modernized remedies.css */
+
+.remedies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.remedy-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.remedy-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+}
+
+.remedy-header {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background: #f0f4f8;
+    border-bottom: 1px solid #e1e8ed;
+    gap: 1rem;
+}
+
+.remedy-header img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.remedy-card:hover .remedy-header img {
+    transform: scale(1.1);
+}
+
+.remedy-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.remedy-content {
+    padding: 1.75rem 1.5rem 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.remedy-content h3 {
+    color: #1a1a1a;
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.remedy-content ul {
+    padding-left: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.remedy-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #444;
+    font-style: italic;
+    border-top: 1px solid #e1e8ed;
+    padding-top: 1rem;
+    margin-top: auto;
+}
+
+.back-to-top {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.back-to-top a {
+    color: #0077cc;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.back-to-top a:hover {
+    color: #005fa3;
+}
+
+/* Popular Remedies Grid */
+.popular-remedies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 2rem auto 3rem;
+    padding: 0 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .remedies-container {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+        margin: 2rem auto;
+    }
+
+    .remedy-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 1rem 1.5rem;
+    }
+    
+    .remedy-header img {
+        margin: 0 0 1rem 0;
+        width: 140px;
+        height: 140px;
+    }
+
+    .remedy-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .remedy-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .popular-remedies-grid {
+        grid-template-columns: 1fr 1fr;
+        max-width: 100%;
+        padding: 0 0.5rem;
+    }
+
+    /* Modern Categories Grid Responsive */
+    .modern-categories-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Modern Categories Grid */
+.modern-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 2rem auto 3rem;
+    padding: 0 1rem;
+}
+
+/* Modern Category Card */
+.modern-category-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.modern-category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.18);
+}
+
+.category-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid #e1e8ed;
+    transition: transform 0.3s ease;
+}
+
+.modern-category-card:hover .category-img {
+    transform: scale(1.05);
+}
+
+.category-content {
+    padding: 1.5rem 1.25rem 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.category-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 0.75rem 0;
+}
+
+.category-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 1.25rem;
+}
+
+.category-badge {
+    align-self: flex-start;
+    background: #4f46e5;
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    user-select: none;
+}

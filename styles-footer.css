@@ -1,0 +1,74 @@
+/* ============================================================
+   Footer Styles
+   ============================================================ */
+.footer {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: var(--space-xl) 0;
+    margin-top: var(--space-xl);
+}
+
+.footer h3 {
+    color: var(--white);
+    margin-bottom: var(--space-md);
+    font-size: var(--font-size-md);
+}
+
+.footer a {
+    color: var(--light);
+    transition: color var(--transition-fast);
+}
+
+.footer a:hover {
+    color: var(--accent);
+}
+
+.footer-about p {
+    margin-bottom: var(--space-md);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: var(--space-xs);
+}
+
+.footer-contact p {
+    margin-bottom: var(--space-xs);
+}
+
+.social-icons {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.social-icons a {
+    font-size: var(--font-size-lg);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: var(--space-lg);
+    margin-top: var(--space-lg);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+}
+
+@media (max-width: 576px) {
+    .footer .grid-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer > div {
+        margin-bottom: var(--space-lg);
+    }
+}

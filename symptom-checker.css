@@ -1,0 +1,93 @@
+:root {
+    --card-bg: #ffffff;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --card-radius: 12px;
+    --card-hover: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.symptom-checker-hero {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 3rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.symptom-checker-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.symptom-checker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.symptom-card {
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.symptom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover);
+}
+
+.symptom-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.symptom-card-title {
+    margin: 1rem 0;
+    color: #1e293b;
+    font-size: 1.25rem;
+}
+
+.symptom-card-desc {
+    color: #64748b;
+}
+
+.symptom-card-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #4f46e5;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.user-msg, .ai-msg {
+    background: #e0f7fa;
+    margin: 8px 0;
+    padding: 10px 15px;
+    border-radius: 12px;
+    max-width: 80%;
+    font-size: 1rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.user-msg {
+    background: #d1fae5;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.ai-msg {
+    background: #ede9fe;
+    align-self: flex-start;
+    text-align: left;
+}
+
+.chat-box {
+    display: flex;
+    flex-direction: column;
+}

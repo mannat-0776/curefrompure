@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Health Remedies</title>
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="index.css">
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="about-responsive.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="area">
+        <ul class="circles">
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+        </ul>
+    </div>
+
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo 2025-05-15 .jpg" alt="Cure From Pure Logo">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="about.html">ℹ️ About</a></li>
+                <li><a href="products.html">💊 Products</a></li>
+                <li><a href="blog.html">📝 Blog</a></li>
+                <li><a href="login.html">🔑 Login</a></li>
+                <li><a href="contact.html">📧 Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-section card" style="max-width: 700px; margin: 60px auto;">
+            <h1>About Us</h1>
+            <p>Welcome to <strong>Cure From Pure</strong>, your trusted destination for natural health remedies and wellness tips. Our mission is to provide you with the best information and products to support your health journey.</p>
+            <p>We believe in the power of nature and aim to empower you with knowledge about natural remedies that can enhance your well-being.</p>
+            <div class="about-icons" style="margin-top: 32px; text-align: center;">
+                <button class="about-icon-btn" data-info="nature" style="background: none; border: none; cursor: pointer;">
+                    <span class="fa fa-leaf" style="color: #30eee2; font-size: 2em; margin: 0 16px;"></span>
+                </button>
+                <button class="about-icon-btn" data-info="health" style="background: none; border: none; cursor: pointer;">
+                    <span class="fa fa-heartbeat" style="color: #3c84ce; font-size: 2em; margin: 0 16px;"></span>
+                </button>
+                <button class="about-icon-btn" data-info="community" style="background: none; border: none; cursor: pointer;">
+                    <span class="fa fa-users" style="color: #f45b69; font-size: 2em; margin: 0 16px;"></span>
+                </button>
+            </div>
+            <div id="about-info-message" style="margin-top: 24px; text-align: center; font-size: 1.1em; color: #333;"></div>
+        </section>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const infoMap = {
+                nature: "We source our remedies from nature, focusing on purity and sustainability.",
+                health: "Your health is our priority. We share evidence-based tips for holistic wellness.",
+                community: "Join our community to share experiences and support each other's health journeys."
+            };
+            document.querySelectorAll('.about-icon-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const info = this.getAttribute('data-info');
+                    document.getElementById('about-info-message').textContent = infoMap[info];
+                });
+            });
+        });
+        </script>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Health Remedies. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

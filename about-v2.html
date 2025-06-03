@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Cure From Pure - Our mission and values">
+    <title>About Us | Cure From Pure</title>
+    <link rel="stylesheet" href="styles-new.css">
+    <link rel="stylesheet" href="styles-footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Include header template -->
+    <div id="header-placeholder"></div>
+
+    <main class="container">
+        <section class="section">
+            <h1 class="section-title">About Cure From Pure</h1>
+            
+            <div class="grid grid-2">
+                <div>
+                    <h2>Our Mission</h2>
+                    <p>We are dedicated to providing natural, pure solutions for health and wellness. Our products are carefully formulated using only the finest natural ingredients.</p>
+                </div>
+                <div>
+                    <h2>Our Values</h2>
+                    <ul>
+                        <li>Purity - No artificial additives</li>
+                        <li>Transparency - Full ingredient disclosure</li>
+                        <li>Sustainability - Eco-friendly practices</li>
+                        <li>Effectiveness - Scientifically validated formulas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="team-section">
+                <h2>Meet Our Team</h2>
+                <div class="grid grid-3">
+                    <!-- Team members will be added here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Include footer template -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load header template
+        fetch('templates/header.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header-placeholder').innerHTML = html;
+            });
+        
+        // Load footer template
+        fetch('templates/footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer-placeholder').innerHTML = html;
+            });
+    </script>
+</body>
+</html>

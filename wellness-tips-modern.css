@@ -1,0 +1,252 @@
+/* wellness-tips-modern.css */
+
+/* Reset and base */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #f7fafc;
+    color: #333;
+}
+
+/* Sticky header */
+header.header {
+    position: sticky;
+    top: 0;
+    background-color: var(--secondary-color, #3c84ce);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 60px;
+}
+
+/* Logo */
+header.header .logo img {
+    width: 120px;
+    height: auto;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.8rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul.nav-links li a:hover {
+    color: #f45b69;
+}
+
+/* Hamburger menu - hidden on desktop */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+/* Main hero/banner */
+.hero {
+    background: url('images/wellness-banner.jpg') center center/cover no-repeat;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    margin-bottom: 2rem;
+}
+
+/* Main content container */
+main {
+    max-width: 1100px;
+    margin: 0 auto 4rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Card container with grid layout */
+.card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(60,132,206,0.10), 0 1.5px 6px rgba(0,0,0,0.04);
+    padding: 2.5rem 3rem;
+    transition: box-shadow 0.18s, transform 0.18s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 32px rgba(60,132,206,0.18), 0 2px 8px rgba(0,0,0,0.08);
+    transform: translateY(-6px) scale(1.02);
+}
+
+/* Grid for wellness tips lists */
+.wellness-lists {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Headings */
+h1 {
+    color: var(--primary-color, #3c84ce);
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+h2 {
+    color: #f45b69;
+    font-size: 1.6rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Lists */
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+ul li {
+    background: #f5faff;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    padding: 14px 18px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 4px rgba(60,132,206,0.04);
+    transition: background 0.25s ease, transform 0.25s ease;
+    cursor: default;
+}
+
+ul li:hover {
+    background: #eaf6fb;
+    transform: translateX(6px);
+}
+
+/* Icons in list items */
+ul li span.fas {
+    margin-right: 14px;
+    font-size: 1.3em;
+    min-width: 26px;
+    text-align: center;
+    color: inherit;
+}
+
+/* Accent colors for icons */
+ul li span.fas.fa-tint,
+ul li span.fas.fa-apple-alt,
+ul li span.fas.fa-users,
+ul li span.fas.fa-brain,
+ul li span.fas.fa-leaf,
+ul li span.fas.fa-coffee,
+ul li span.fas.fa-book {
+    color: #30eee2;
+}
+
+ul li span.fas.fa-bed,
+ul li span.fas.fa-spa,
+ul li span.fas.fa-check-circle,
+ul li span.fas.fa-music {
+    color: #3c84ce;
+}
+
+ul li span.fas.fa-walking,
+ul li span.fas.fa-heart,
+ul li span.fas.fa-mobile-alt,
+ul li span.fas.fa-laugh-beam,
+ul li span.fas.fa-hands-helping,
+ul li span.fas.fa-sun,
+ul li span.fas.fa-minus-circle {
+    color: #f45b69;
+}
+
+/* Blockquote */
+blockquote {
+    background: #f5faff;
+    border-left: 5px solid var(--primary-color, #3c84ce);
+    margin-top: 2rem;
+    padding: 18px 24px;
+    font-style: italic;
+    color: var(--primary-color, #3c84ce);
+    border-radius: 10px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+blockquote .fas {
+    margin-right: 12px;
+    font-size: 1.4em;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color, #3c84ce);
+    color: #fff;
+    text-align: center;
+    padding: 1.8rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-top: 3rem;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+    nav ul.nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: var(--secondary-color, #3c84ce);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        border-radius: 0 0 0 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        padding: 1rem 0;
+        z-index: 1001;
+    }
+    nav ul.nav-links.active {
+        display: flex;
+    }
+    .hamburger {
+        display: flex;
+    }
+    main {
+        padding: 0 1rem;
+    }
+}
+
+

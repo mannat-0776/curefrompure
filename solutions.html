@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Health Solutions - Health Remedies</title>
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="components.css" />
+    <link rel="stylesheet" href="animations.css" />
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="solutions.css" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo:400,700&display=swap" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- Model Viewer -->
+    <script
+        type="module"
+        src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Exo', sans-serif;
+            background: linear-gradient(135deg, #e0eafc, #cfdef3);
+            color: #333;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        /* Remove old background animation */
+        .area,
+        .circles {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo 2025-05-15 .jpg" alt="Cure From Pure Logo" />
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="remedies.html">🌿 Remedies</a></li>
+                <li><a href="solutions.html" class="active">💡 Solutions</a></li>
+                <li><a href="products.html">💊 Products</a></li>
+                <li><a href="about.html">ℹ️ About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Tailored Health Solutions</h1>
+            <p>Discover personalized natural and pharmaceutical solutions for your health concerns</p>
+        </div>
+    </section>
+
+    <!-- Solutions Categories Section -->
+    <section class="solutions-categories">
+        <h2>Browse by Health Concern</h2>
+        <div class="category-grid">
+            <a href="digestive-health.html" class="category-card">
+                <img src="images/digestive.jpg" alt="Digestive Health" />
+                <h3>Digestive Health</h3>
+                <span class="category-link">See Solutions</span>
+            </a>
+            <a href="respiratory-health.html" class="category-card">
+                <img src="images/respiratory.jpg" alt="Respiratory Health" />
+                <h3>Respiratory Health</h3>
+                <span class="category-link">See Solutions</span>
+            </a>
+            <a href="immune-support.html" class="category-card">
+                <img src="images/Immune Support.jpg" alt="Immune Support" />
+                <h3>Immune Support</h3>
+                <span class="category-link">See Solutions</span>
+            </a>
+            <a href="pain-relief.html" class="category-card">
+                <img src="images/Pain Relief.jpg" alt="Pain Relief" />
+                <h3>Pain Relief</h3>
+                <span class="category-link">See Solutions</span>
+            </a>
+            <a href="skin-care.html" class="category-card">
+                <img src="images/skin care.jpg" alt="Skin Care" />
+                <h3>Skin Care</h3>
+                <span class="category-link">See Solutions</span>
+            </a>
+            <a href="stress-relief.html" class="category-card">
+                <img src="images/Stress Relief.jpg" alt="Stress Relief" />
+                <h3>Stress Relief</h3>
+                <span class="category-link">See Solutions</span>
+            </a>
+            <a href="eye-health.html" class="category-card">
+                <img src="images/eyes.jpeg" alt="Eye Health" />
+                <h3>Eye Health</h3>
+                <span class="category-link">See Solutions</span>
+            </a>
+            <a href="heart-health.html" class="category-card">
+                <img src="images/hearthealth.jpg" alt="Heart Health" />
+                <h3>Heart Health</h3>
+                <span class="category-link">See Solutions</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Health Resources Section -->
+    <section class="resources-section">
+        <h2>Health Resources</h2>
+        <div class="card-grid">
+            <div class="resource-card">
+                <div class="card-icon">
+                    <i class="fas fa-book-medical"></i>
+                </div>
+                <h3>Remedy Guides</h3>
+                <p>
+                    Explore detailed information about natural and pharmaceutical solutions tailored to various health concerns. Learn how to use remedies effectively and safely.
+                </p>
+                <a href="remedy-guides.html" class="btn">Learn More</a>
+            </div>
+            <div class="resource-card">
+                <div class="card-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <h3>Wellness Tips</h3>
+                <p>
+                    Discover daily practices and lifestyle changes that promote optimal health and well-being. From nutrition advice to stress management techniques, find tips that work for you.
+                </p>
+                <a href="wellness-tips.html" class="btn">Read Tips</a>
+            </div>
+            <div class="resource-card">
+                <div class="card-icon">
+                    <i class="fas fa-stethoscope"></i>
+                </div>
+                <h3>Symptom Checker</h3>
+                <p>
+                    Use our interactive tool to identify potential remedies based on your symptoms. Get personalized suggestions to address your health concerns effectively.
+                </p>
+                <a href="symptom-checker.html" class="btn">Try Now</a>
+            </div>
+            <div class="resource-card">
+                <div class="card-icon">
+                    <i class="fas fa-apple-alt"></i>
+                </div>
+                <h3>Nutrition Guide</h3>
+                <p>
+                    Learn about essential nutrients, balanced diets, and food-based remedies for various health conditions.
+                </p>
+                <a href="nutrition-guide.html" class="btn">Explore</a>
+            </div>
+            <div class="resource-card">
+                <div class="card-icon">
+                    <i class="fas fa-running"></i>
+                </div>
+                <h3>Exercise Planner</h3>
+                <p>
+                    Discover tailored workout routines for different fitness levels and health conditions to improve your wellbeing.
+                </p>
+                <a href="exercise-planner.html" class="btn">Get Started</a>
+            </div>
+            <div class="resource-card">
+                <div class="card-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>Mental Health</h3>
+                <p>
+                    Access resources for managing stress, anxiety, and emotional wellbeing. Learn techniques for mindfulness, relaxation, and building resilience.
+                </p>
+                <a href="mental-health.html" class="btn">View Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Health Remedies. All Rights Reserved.</p>
+    </footer>
+
+    <script type="module" src="config.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

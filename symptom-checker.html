@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Symptom Checker - Modern</title>
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="components.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="styles-new.css" />
+  <link rel="stylesheet" href="symptom-checker.css" />
+  <style>
+    /* Additional modern styles for layout */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      color: #1e293b;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #4f46e5;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+    }
+
+    header .logo img {
+      height: 40px;
+      border-radius: 8px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #c7d2fe;
+    }
+
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 2rem auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .hero {
+      text-align: center;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      color: #3730a3;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #64748b;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      border: 2px solid #4f46e5;
+      border-radius: 16px;
+      padding: 1rem;
+      background: #f9fafb;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .chat-header {
+      font-weight: 700;
+      color: #4f46e5;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    #chatBox {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-size: 1rem;
+      color: #1e293b;
+      overflow-y: auto;
+      max-height: 320px;
+      padding-right: 0.5rem;
+    }
+
+    .user-msg {
+      align-self: flex-end;
+      background: #c7d2fe;
+      color: #1e293b;
+      padding: 0.75rem 1rem;
+      border-radius: 16px 16px 0 16px;
+      max-width: 75%;
+      word-wrap: break-word;
+      box-shadow: 0 2px 6px rgba(79, 70, 229, 0.3);
+    }
+
+    .ai-msg {
+      align-self: flex-start;
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 0.75rem 1rem;
+      border-radius: 16px 16px 16px 0;
+      max-width: 75%;
+      word-wrap: break-word;
+      box-shadow: 0 2px 6px rgba(99, 102, 241, 0.3);
+    }
+
+    .ai-msg.typing {
+      font-style: italic;
+      color: #6b7280;
+    }
+
+    .input-area {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    #userInput {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border-radius: 16px;
+      border: 2px solid #4f46e5;
+      outline-offset: 2px;
+      transition: border-color 0.3s ease;
+    }
+
+    #userInput:focus {
+      border-color: #3730a3;
+    }
+
+    button.send-btn {
+      background: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 16px;
+      padding: 0 1.5rem;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button.send-btn:hover {
+      background: #3730a3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.875rem;
+      color: #94a3b8;
+      background: #f9fafb;
+      margin-top: auto;
+    }
+
+    .symptom-title {
+      font-weight: bold;
+      font-size: 1.08em;
+      background: linear-gradient(90deg, #4f46e5 0%, #06b6d4 100%);
+      color: #fff !important;
+      padding: 2px 10px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 2px;
+      box-shadow: 0 2px 6px rgba(79, 70, 229, 0.10);
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 1rem;
+        padding: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      #chatBox {
+        max-height: 240px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="images/logo 2025-05-15 .jpg" alt="Cure From Pure Logo" /></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="about.html">ℹ️ About</a></li>
+        <li><a href="products.html">💊 Products</a></li>
+        <li><a href="compare.html">⚖️ Compare</a></li>
+        <li><a href="contact.html">📧 Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" aria-label="Symptom Checker Introduction">
+      <h1>Check Your Symptoms</h1>
+      <p>Identify potential health issues based on your symptoms.</p>
+    </section>
+    <section class="chat-section" aria-label="Symptom Checker Chat">
+      <div class="chat-container" role="log" aria-live="polite" aria-relevant="additions">
+        <div class="chat-header">🧠 CureBot - AI Symptom Assistant</div>
+        <div id="chatBox" class="chat-box" tabindex="0"></div>
+      </div>
+      <div class="input-area">
+        <input type="text" id="userInput" placeholder="Type a symptom or condition..." aria-label="Symptom input"
+          autocomplete="off" />
+        <button class="send-btn" onclick="sendMessage()" aria-label="Send symptom message">Send</button>
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Cure From Pure. All rights reserved.
+  </footer>
+  <!-- Add this before your other scripts -->
+  <script src="config.js"></script>
+  <script src="nlp-utils.js"></script>
+  <script src="test-chatgpt-api.js"></script>
+  <script>
+    async function sendMessage() {
+      const input = document.getElementById("userInput");
+      const message = input.value.trim();
+      if (!message) return;
+
+      const chatBox = document.getElementById("chatBox");
+
+      // Show user message
+      chatBox.innerHTML += `<div class="user-msg">${message}</div>`;
+      input.value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      // Check for "symton" typo
+      if (/symton/i.test(message)) {
+        chatBox.innerHTML += `<div class="ai-msg">⚠️ It seems you typed "symton". Did you mean "symptom"? Please correct it and try again.</div>`;
+        chatBox.scrollTop = chatBox.scrollHeight;
+        return;
+      }
+
+      // Symptom quick responses
+      const symptomResponses = {
+        "fever": `
+          <span class="symptom-title">🌡️ Fever</span><br>
+          <i>Possible causes:</i> Infection (viral, bacterial), inflammation, heat exhaustion, etc.<br>
+          <i>Natural remedies:</i> Stay hydrated, rest, use a cool compress, wear light clothing.<br>
+          <i>Pharmacy remedies:</i> Paracetamol, ibuprofen (as directed).<br>
+          <i>When to see a doctor:</i> If fever is above 39°C (102°F), lasts more than 3 days, or is accompanied by severe symptoms (confusion, difficulty breathing, persistent vomiting, etc).<br>
+          <small>Always consult a healthcare professional for persistent or severe symptoms.</small>
+        `,
+        "bp": `
+          <span class="symptom-title">🩺 Blood Pressure (BP)</span><br>
+          <i>Possible causes:</i> High BP: stress, obesity, genetics, salt intake. Low BP: dehydration, blood loss, medication.<br>
+          <i>Natural remedies:</i> For high BP: reduce salt, exercise, manage stress. For low BP: hydrate, eat small frequent meals.<br>
+          <i>Pharmacy remedies:</i> As prescribed by doctor (antihypertensives for high BP, etc).<br>
+          <i>When to see a doctor:</i> Very high/low readings, dizziness, chest pain, fainting.<br>
+          <small>Regular monitoring and medical advice are important for BP issues.</small>
+        `,
+        "cold": `
+          <span class="symptom-title">🤧 Common Cold</span><br>
+          <i>Possible causes:</i> Viral infection (rhinovirus, etc).<br>
+          <i>Natural remedies:</i> Rest, hydrate, warm fluids, steam inhalation.<br>
+          <i>Pharmacy remedies:</i> Decongestants, antihistamines, paracetamol.<br>
+          <i>When to see a doctor:</i> High fever, shortness of breath, symptoms >10 days.<br>
+          <small>Most colds resolve in 7-10 days. See a doctor if symptoms worsen.</small>
+        `,
+        "cough": `
+          <span class="symptom-title">🤧 Cough</span><br>
+          <i>Possible causes:</i> Cold, flu, allergies, asthma, infection.<br>
+          <i>Natural remedies:</i> Honey (over age 1), warm fluids, steam inhalation.<br>
+          <i>Pharmacy remedies:</i> Cough syrup, lozenges, decongestants.<br>
+          <i>When to see a doctor:</i> Lasts >3 weeks, blood in sputum, shortness of breath, chest pain.<br>
+          <small>Seek medical advice for persistent or severe cough.</small>
+        `,
+        "pain": `
+          <span class="symptom-title">💢 Pain</span><br>
+          <i>Possible causes:</i> Injury, inflammation, infection, chronic conditions.<br>
+          <i>Natural remedies:</i> Rest, ice/heat packs, gentle movement, relaxation.<br>
+          <i>Pharmacy remedies:</i> Paracetamol, ibuprofen, topical creams (as advised).<br>
+          <i>When to see a doctor:</i> Severe, persistent, or unexplained pain.<br>
+          <small>Consult a healthcare professional for ongoing or severe pain.</small>
+        `,
+        "hair fall": `
+          <span class="symptom-title">🧑‍🦲 Hair Fall</span><br>
+          <i>Possible causes:</i> Stress, hormonal changes, nutritional deficiency, genetics, scalp conditions.<br>
+          <i>Natural remedies:</i> Gentle hair care, balanced diet (iron, protein, vitamins), reduce stress.<br>
+          <i>Pharmacy remedies:</i> Minoxidil, supplements (as advised).<br>
+          <i>When to see a doctor:</i> Sudden or patchy hair loss, scalp pain, or associated symptoms.<br>
+          <small>Consult a dermatologist for persistent or severe hair fall.</small>
+        `,
+        "back pain": `
+          <span class="symptom-title">🦴 Back Pain</span><br>
+          <i>Possible causes:</i> Muscle strain, poor posture, injury.<br>
+          <i>Natural remedies:</i> Rest, gentle stretching, heat/cold packs.<br>
+          <i>Pharmacy remedies:</i> Pain relievers, topical creams.<br>
+          <i>When to see a doctor:</i> Numbness, weakness, after injury, persistent pain.<br>
+          <small>Consult a doctor for severe or chronic back pain.</small>
+        `,
+        "knee pain": `
+          <span class="symptom-title">🦵 Knee Pain</span><br>
+          <i>Possible causes:</i> Injury, arthritis, overuse, strain.<br>
+          <i>Natural remedies:</i> Rest, ice, compression, elevation (RICE), gentle exercises.<br>
+          <i>Pharmacy remedies:</i> Pain relievers, anti-inflammatory creams.<br>
+          <i>When to see a doctor:</i> Severe pain, swelling, inability to bear weight.<br>
+          <small>Persistent knee pain should be evaluated by a healthcare professional.</small>
+        `,
+        "neck pain": `
+          <span class="symptom-title">🦴 Neck Pain</span><br>
+          <i>Possible causes:</i> Muscle strain, poor posture, injury, stress.<br>
+          <i>Natural remedies:</i> Gentle stretching, heat/cold packs, good posture.<br>
+          <i>Pharmacy remedies:</i> Pain relievers, muscle relaxants.<br>
+          <i>When to see a doctor:</i> Numbness, weakness, after injury, persistent pain.<br>
+          <small>Consult a doctor for severe or chronic neck pain.</small>
+        `,
+        "fatigue": `
+          <span class="symptom-title">😴 Fatigue</span><br>
+          <i>Possible causes:</i> Lack of sleep, stress, anemia, infection.<br>
+          <i>Natural remedies:</i> Rest, balanced diet, manage stress.<br>
+          <i>Pharmacy remedies:</i> As advised by doctor.<br>
+          <i>When to see a doctor:</i> Lasts >2 weeks, with weight loss, shortness of breath.<br>
+          <small>Persistent fatigue should be evaluated by a healthcare professional.</small>
+        `,
+        "digestive issue": `
+          <span class="symptom-title">🍽️ Digestive Issue</span><br>
+          <i>Possible causes:</i> Indigestion, infection, food intolerance, stress.<br>
+          <i>Natural remedies:</i> Eat small frequent meals, avoid trigger foods, stay hydrated.<br>
+          <i>Pharmacy remedies:</i> Antacids, probiotics, digestive enzymes.<br>
+          <i>When to see a doctor:</i> Persistent pain, blood in stool, weight loss.<br>
+          <small>Consult a doctor for ongoing digestive problems.</small>
+        `,
+        "chest pain": `
+          <span class="symptom-title">❤️ Chest Pain</span><br>
+          <i>Possible causes:</i> Heart, lung, muscle, digestive issues.<br>
+          <i>Natural remedies:</i> Rest, avoid exertion.<br>
+          <i>Pharmacy remedies:</i> As advised by doctor.<br>
+          <i>When to see a doctor:</i> Sudden, severe, with shortness of breath, sweating.<br>
+          <small>Seek emergency care for chest pain.</small>
+        `,
+        "low back pain": `
+          <span class="symptom-title">🦴 Low Back Pain</span><br>
+          <i>Possible causes:</i> Muscle strain, poor posture, herniated disc.<br>
+          <i>Natural remedies:</i> Rest, gentle stretching, heat/cold packs.<br>
+          <i>Pharmacy remedies:</i> Pain relievers, topical creams.<br>
+          <i>When to see a doctor:</i> Numbness, weakness, after injury, persistent pain.<br>
+          <small>Consult a doctor for severe or chronic low back pain.</small>
+        `,
+        "eye problem": `
+          <span class="symptom-title">👁️ Eye Problem</span><br>
+          <i>Possible causes:</i> Infection, allergy, dryness, vision changes.<br>
+          <i>Natural remedies:</i> Cold compress, rest eyes, avoid irritants.<br>
+          <i>Pharmacy remedies:</i> Lubricating drops, antihistamines.<br>
+          <i>When to see a doctor:</i> Pain, vision loss, discharge, redness.<br>
+          <small>Consult an eye specialist for persistent or severe eye problems.</small>
+        `,
+        "skin problem": `
+          <span class="symptom-title">🩹 Skin Problem</span><br>
+          <i>Possible causes:</i> Allergy, infection, eczema, irritation.<br>
+          <i>Natural remedies:</i> Moisturize, avoid irritants, cool compress.<br>
+          <i>Pharmacy remedies:</i> Antihistamines, hydrocortisone cream.<br>
+          <i>When to see a doctor:</i> Spreading, severe, with fever or pain.<br>
+          <small>Consult a dermatologist for persistent or severe skin issues.</small>
+        `,
+        "sore throat": `
+          <span class="symptom-title">😮‍💨 Sore Throat</span><br>
+          <i>Possible causes:</i> Viral/bacterial infection, allergies, dry air.<br>
+          <i>Natural remedies:</i> Warm saltwater gargle, honey, herbal tea.<br>
+          <i>Pharmacy remedies:</i> Lozenges, throat sprays, pain relievers.<br>
+          <i>When to see a doctor:</i> Severe pain, difficulty swallowing, high fever, lasts >1 week.<br>
+          <small>Persistent sore throat may need medical evaluation.</small>
+        `,
+        "joint pain": `
+          <span class="symptom-title">🦵 Joint Pain</span><br>
+          <i>Possible causes:</i> Arthritis, injury, overuse.<br>
+          <i>Natural remedies:</i> Rest, ice/heat, gentle movement.<br>
+          <i>Pharmacy remedies:</i> Pain relievers, anti-inflammatories.<br>
+          <i>When to see a doctor:</i> Swelling, redness, severe pain.<br>
+          <small>Persistent joint pain should be evaluated by a doctor.</small>
+        `,
+        "shoulder pain": `
+          <span class="symptom-title">🏋️‍♂️ Shoulder Pain</span><br>
+          <i>Possible causes:</i> Injury, overuse, frozen shoulder, arthritis.<br>
+          <i>Natural remedies:</i> Rest, gentle stretching, ice/heat packs.<br>
+          <i>Pharmacy remedies:</i> Pain relievers, anti-inflammatory creams.<br>
+          <i>When to see a doctor:</i> Severe pain, inability to move, swelling.<br>
+          <small>Consult a doctor for persistent or severe shoulder pain.</small>
+        `,
+        "heart pain": `
+          <span class="symptom-title">❤️ Heart Pain</span><br>
+          <i>Possible causes:</i> Angina, heart attack, anxiety, muscle strain.<br>
+          <i>Natural remedies:</i> Rest, avoid exertion.<br>
+          <i>Pharmacy remedies:</i> As prescribed by doctor.<br>
+          <i>When to see a doctor:</i> Sudden, severe, with shortness of breath, sweating, nausea.<br>
+          <small>Seek emergency care for heart pain.</small>
+        `,
+        "dry eyes": `
+          <span class="symptom-title">🥲 Dry Eyes</span><br>
+          <i>Possible causes:</i> Prolonged screen use, low humidity, aging, certain medications.<br>
+          <i>Natural remedies:</i> Blink often, use humidifier, take screen breaks.<br>
+          <i>Pharmacy remedies:</i> Lubricating eye drops.<br>
+          <i>When to see a doctor:</i> Persistent dryness, pain, vision changes.<br>
+          <small>Consult an eye specialist for ongoing dry eyes.</small>
+        `,
+        "itching in eye": `
+          <span class="symptom-title">👁️‍🗨️ Itching in Eye</span><br>
+          <i>Possible causes:</i> Allergy, dryness, infection.<br>
+          <i>Natural remedies:</i> Cold compress, avoid rubbing.<br>
+          <i>Pharmacy remedies:</i> Antihistamine or lubricating eye drops.<br>
+          <i>When to see a doctor:</i> Persistent itching, redness, discharge.<br>
+          <small>Consult a doctor for severe or persistent eye itching.</small>
+        `,
+        "indigestion": `
+          <span class="symptom-title">🍽️ Indigestion</span><br>
+          <i>Possible causes:</i> Overeating, spicy/fatty foods, stress.<br>
+          <i>Natural remedies:</i> Eat slowly, avoid trigger foods, ginger tea.<br>
+          <i>Pharmacy remedies:</i> Antacids, digestive enzymes.<br>
+          <i>When to see a doctor:</i> Persistent pain, vomiting, weight loss.<br>
+          <small>Consult a doctor for ongoing indigestion.</small>
+        `,
+        "itchy rash on arms": `
+          <span class="symptom-title">🌺 Itchy Rash on Arms</span><br>
+          <i>Possible causes:</i> Allergy, eczema, insect bite, irritation.<br>
+          <i>Natural remedies:</i> Cool compress, avoid scratching, moisturize.<br>
+          <i>Pharmacy remedies:</i> Antihistamines, hydrocortisone cream.<br>
+          <i>When to see a doctor:</i> Spreading, severe, with fever or pain.<br>
+          <small>Consult a doctor for persistent or severe rash.</small>
+        `,
+        "headache on one side": `
+          <span class="symptom-title">🤕 Headache (One Side)</span><br>
+          <i>Possible causes:</i> Migraine, tension headache, sinusitis, cluster headache.<br>
+          <i>Natural remedies:</i> Rest in a dark room, cold/warm compress, hydrate.<br>
+          <i>Pharmacy remedies:</i> Paracetamol, ibuprofen, migraine-specific medication.<br>
+          <i>When to see a doctor:</i> Sudden severe pain, vision changes, after head injury.<br>
+          <small>Consult a doctor for severe or persistent one-sided headaches.</small>
+        `,
+        // --- SEO symptom additions below ---
+        "acne": `
+          <span class="symptom-title">🧴 Acne</span><br>
+          <i>Possible causes:</i> Hormonal changes, oily skin, stress, diet.<br>
+          <i>Natural remedies:</i> Gentle cleansing, avoid picking, balanced diet.<br>
+          <i>Pharmacy remedies:</i> Benzoyl peroxide, salicylic acid, retinoids.<br>
+          <i>When to see a doctor:</i> Severe, cystic, or scarring acne.<br>
+          <small>Consult a dermatologist for persistent or severe acne.</small>
+        `,
+        "allergy": `
+          <span class="symptom-title">🌼 Allergy</span><br>
+          <i>Possible causes:</i> Pollen, dust, food, medication.<br>
+          <i>Natural remedies:</i> Avoid allergens, saline nasal rinse.<br>
+          <i>Pharmacy remedies:</i> Antihistamines, nasal sprays.<br>
+          <i>When to see a doctor:</i> Severe reaction, breathing difficulty.<br>
+          <small>Seek emergency care for anaphylaxis.</small>
+        `,
+        "anxiety": `
+          <span class="symptom-title">😰 Anxiety</span><br>
+          <i>Possible causes:</i> Stress, mental health conditions.<br>
+          <i>Natural remedies:</i> Deep breathing, mindfulness, exercise.<br>
+          <i>Pharmacy remedies:</i> As prescribed by doctor.<br>
+          <i>When to see a doctor:</i> Persistent, interfering with daily life.<br>
+          <small>Consult a mental health professional for ongoing anxiety.</small>
+        `,
+        "constipation": `
+          <span class="symptom-title">🚽 Constipation</span><br>
+          <i>Possible causes:</i> Low fiber, dehydration, inactivity.<br>
+          <i>Natural remedies:</i> Increase fiber, fluids, exercise.<br>
+          <i>Pharmacy remedies:</i> Laxatives (as directed).<br>
+          <i>When to see a doctor:</i> Severe pain, blood in stool.<br>
+          <small>Consult a doctor for persistent constipation.</small>
+        `,
+        "diarrhea": `
+          <span class="symptom-title">💧 Diarrhea</span><br>
+          <i>Possible causes:</i> Infection, food intolerance, medication.<br>
+          <i>Natural remedies:</i> Hydration, bland diet.<br>
+          <i>Pharmacy remedies:</i> Oral rehydration, anti-diarrheal (as advised).<br>
+          <i>When to see a doctor:</i> Blood in stool, dehydration, lasts >2 days.<br>
+          <small>Seek medical advice for severe diarrhea.</small>
+        `,
+        "dizziness": `
+          <span class="symptom-title">🌀 Dizziness</span><br>
+          <i>Possible causes:</i> Low blood pressure, dehydration, ear problems.<br>
+          <i>Natural remedies:</i> Sit/lie down, hydrate.<br>
+          <i>Pharmacy remedies:</i> As advised by doctor.<br>
+          <i>When to see a doctor:</i> Fainting, chest pain, severe or recurrent.<br>
+          <small>Consult a doctor for ongoing dizziness.</small>
+        `,
+        "ear pain": `
+          <span class="symptom-title">👂 Ear Pain</span><br>
+          <i>Possible causes:</i> Infection, wax buildup, injury.<br>
+          <i>Natural remedies:</i> Warm compress, rest.<br>
+          <i>Pharmacy remedies:</i> Pain relievers, ear drops.<br>
+          <i>When to see a doctor:</i> Hearing loss, discharge, severe pain.<br>
+          <small>Consult a doctor for persistent ear pain.</small>
+        `,
+        "vomiting": `
+          <span class="symptom-title">🤢 Vomiting</span><br>
+          <i>Possible causes:</i> Infection, food poisoning, migraine.<br>
+          <i>Natural remedies:</i> Rest, hydrate, bland foods.<br>
+          <i>Pharmacy remedies:</i> Antiemetics (as advised).<br>
+          <i>When to see a doctor:</i> Blood in vomit, dehydration, lasts >24 hours.<br>
+          <small>Seek medical advice for severe vomiting.</small>
+        `,
+        "weight loss": `
+          <span class="symptom-title">⚖️ Unintentional Weight Loss</span><br>
+          <i>Possible causes:</i> Thyroid issues, diabetes, cancer, infection.<br>
+          <i>Natural remedies:</i> Balanced diet, monitor symptoms.<br>
+          <i>Pharmacy remedies:</i> As advised by doctor.<br>
+          <i>When to see a doctor:</i> Rapid or unexplained weight loss.<br>
+          <small>Consult a doctor for unexplained weight loss.</small>
+        `,
+        "weight gain": `
+          <span class="symptom-title">⚖️ Unintentional Weight Gain</span><br>
+          <i>Possible causes:</i> Hypothyroidism, medication, lifestyle.<br>
+          <i>Natural remedies:</i> Healthy diet, regular exercise.<br>
+          <i>Pharmacy remedies:</i> As advised by doctor.<br>
+          <i>When to see a doctor:</i> Rapid or unexplained weight gain.<br>
+          <small>Consult a doctor for unexplained weight gain.</small>
+        `,
+        "shortness of breath": `
+          <span class="symptom-title">😮‍💨 Shortness of Breath</span><br>
+          <i>Possible causes:</i> Asthma, heart/lung issues, anxiety.<br>
+          <i>Natural remedies:</i> Rest, breathing exercises.<br>
+          <i>Pharmacy remedies:</i> Inhalers, as prescribed.<br>
+          <i>When to see a doctor:</i> Sudden, severe, with chest pain.<br>
+          <small>Seek emergency care for severe shortness of breath.</small>
+        `,
+        "palpitations": `
+          <span class="symptom-title">💓 Palpitations</span><br>
+          <i>Possible causes:</i> Anxiety, caffeine, arrhythmia.<br>
+          <i>Natural remedies:</i> Relaxation, avoid stimulants.<br>
+          <i>Pharmacy remedies:</i> As prescribed.<br>
+          <i>When to see a doctor:</i> With chest pain, fainting, or persistent.<br>
+          <small>Consult a doctor for ongoing palpitations.</small>
+        `,
+        "nausea": `
+          <span class="symptom-title">🤢 Nausea</span><br>
+          <i>Possible causes:</i> Infection, migraine, pregnancy, motion sickness.<br>
+          <i>Natural remedies:</i> Ginger, hydrate, rest.<br>
+          <i>Pharmacy remedies:</i> Antiemetics (as advised).<br>
+          <i>When to see a doctor:</i> Persistent, with vomiting, blood, or weight loss.<br>
+          <small>Consult a doctor for ongoing nausea.</small>
+        `,
+        "insomnia": `
+          <span class="symptom-title">🌙 Insomnia</span><br>
+          <i>Possible causes:</i> Stress, anxiety, caffeine, medical conditions.<br>
+          <i>Natural remedies:</i> Sleep hygiene, relaxation, regular schedule.<br>
+          <i>Pharmacy remedies:</i> Sleep aids (as prescribed).<br>
+          <i>When to see a doctor:</i> Persistent, affecting daily life.<br>
+          <small>Consult a doctor for chronic insomnia.</small>
+        `,
+        "depression": `
+          <span class="symptom-title">😔 Depression</span><br>
+          <i>Possible causes:</i> Mental health conditions, stress, trauma.<br>
+          <i>Natural remedies:</i> Support, exercise, therapy.<br>
+          <i>Pharmacy remedies:</i> Antidepressants (as prescribed).<br>
+          <i>When to see a doctor:</i> Persistent sadness, thoughts of self-harm.<br>
+          <small>Seek help from a mental health professional.</small>
+        `,
+        "menstrual pain": `
+          <span class="symptom-title">🩸 Menstrual Pain</span><br>
+          <i>Possible causes:</i> Period cramps, endometriosis.<br>
+          <i>Natural remedies:</i> Heat pad, gentle exercise.<br>
+          <i>Pharmacy remedies:</i> Pain relievers.<br>
+          <i>When to see a doctor:</i> Severe, interfering with life.<br>
+          <small>Consult a gynecologist for severe menstrual pain.</small>
+        `,
+        "urinary burning": `
+          <span class="symptom-title">🔥 Burning Urination</span><br>
+          <i>Possible causes:</i> Urinary tract infection, dehydration.<br>
+          <i>Natural remedies:</i> Hydrate, cranberry juice.<br>
+          <i>Pharmacy remedies:</i> Antibiotics (as prescribed).<br>
+          <i>When to see a doctor:</i> Blood in urine, fever, persistent.<br>
+          <small>Consult a doctor for urinary symptoms.</small>
+        `,
+        "swelling": `
+          <span class="symptom-title">💧 Swelling</span><br>
+          <i>Possible causes:</i> Injury, infection, heart/kidney issues.<br>
+          <i>Natural remedies:</i> Elevate, rest, cold compress.<br>
+          <i>Pharmacy remedies:</i> As advised by doctor.<br>
+          <i>When to see a doctor:</i> Sudden, severe, with pain or redness.<br>
+          <small>Consult a doctor for unexplained swelling.</small>
+        `,
+        // --- Existing responses below ---
+        "headache": `
+          <span class="symptom-title">🤕 Headache</span><br>
+          <i>Possible causes:</i> Tension, dehydration, stress, migraine, sinusitis.<br>
+          <i>Natural remedies:</i> Rest, hydrate, cold/warm compress, relaxation techniques.<br>
+          <i>Pharmacy remedies:</i> Paracetamol, ibuprofen, aspirin (as directed).<br>
+          <i>When to see a doctor:</i> Sudden severe pain, vision changes, after head injury, or with fever/stiff neck.<br>
+          <small>Persistent headaches should be evaluated by a healthcare professional.</small>
+        `,
+        "cough": `
+          <span class="symptom-title">🤧 Cough</span><br>
+          <i>Possible causes:</i> Cold, flu, allergies, asthma, infection.<br>
+          <i>Natural remedies:</i> Honey (over age 1), warm fluids, steam inhalation.<br>
+          <i>Pharmacy remedies:</i> Cough syrup, lozenges, decongestants.<br>
+          <i>When to see a doctor:</i> Lasts >3 weeks, blood in sputum, shortness of breath, chest pain.<br>
+          <small>Seek medical advice for persistent or severe cough.</small>
+        `,
+        // ... rest of the original responses ...
+      };
+
+      // Use nlp-utils.js if available for normalization
+      let normalized = message.trim().toLowerCase();
+      if (typeof normalizeSymptom === "function") {
+        normalized = normalizeSymptom(message);
+      }
+
+      if (symptomResponses[normalized]) {
+        const aiMsg = document.createElement("div");
+        aiMsg.className = "ai-msg";
+        aiMsg.innerHTML = symptomResponses[normalized];
+        chatBox.appendChild(aiMsg);
+        chatBox.scrollTop = chatBox.scrollHeight;
+        return;
+      }
+
+      // If no local match, send to backend (connect to test-chatgpt-api.js)
+      const aiMsg = document.createElement("div");
+      aiMsg.className = "ai-msg typing";
+      aiMsg.innerText = "Typing...";
+      chatBox.appendChild(aiMsg);
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      try {
+        // Use the exported function from test-chatgpt-api.js if available
+        let data;
+        if (typeof window.testChatGptApi === "function") {
+          data = await window.testChatGptApi(message);
+        } else {
+          const apiUrl = window.APP_CONFIG?.apiBaseUrl || "/api/chatgpt";
+          const response = await fetch(apiUrl, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ prompt: message }),
+          });
+          data = await response.json();
+        }
+
+        aiMsg.classList.remove("typing");
+        if (data && data.response) {
+          aiMsg.innerHTML = data.response;
+        } else if (data && data.error) {
+          aiMsg.innerHTML = `🤖 Error: ${data.error}`;
+        } else {
+          aiMsg.innerHTML = `🤖 Sorry, I didn't get a response.`;
+        }
+      } catch (error) {
+        aiMsg.classList.remove("typing");
+        aiMsg.innerHTML = `🤖 Error: ${error.message}`;
+      }
+
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  </script>
+</body>
+
+</html>

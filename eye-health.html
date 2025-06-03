@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Health - Health Remedies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Playfair Display', serif;
+    }
+    #header{
+      margin:20px;
+    }
+    #header>h1{
+      text-align:center;
+      font-size:3rem;
+    }
+    #header>p{
+      text-align:center;
+      font-size:1.5rem;
+      font-style:italic;
+    }
+    .container{
+      width:100vw;
+      display:flex;
+      justify-content:space-around;
+      flex-wrap:wrap;
+      padding:40px 20px;
+    }
+    .card{
+      display:flex;
+      flex-direction:column;
+      width:400px;
+      margin-bottom:60px;
+    }
+    .card>div{
+      box-shadow:0 15px 20px 0 rgba(0,0,0,0.5);
+    }
+    .card-image{
+      width:400px;
+      height:250px;
+    }
+    .card-image>img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+    }
+    .card-text{
+      margin:-30px auto;
+      margin-bottom:-50px;
+      height:320px;
+      width:300px;
+      background-color:#1D1C20;
+      color:#fff;
+      padding:20px;
+    }
+    .card-meal-type{
+      font-style:italic;
+    }
+    .card-title{
+      font-size:2.2rem;
+      margin-bottom:20px;
+      margin-top:5px;
+    }
+    .card-body{
+      font-size:1.15rem;
+    }
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        width:90vw;
+      }
+      .card-image, .card-text {
+        width:90vw;
+        max-width:400px;
+      }
+    }
+    </style>
+</head>
+<body>
+    <!-- Animated Background like index -->
+    <div class="area">
+        <ul class="circles">
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+        </ul>
+    </div>
+    <!-- Navigation Bar (like index) -->
+    <header class="header" style="background:rgba(29,28,32,0.95);padding:0;">
+        <div class="logo" style="display:flex;align-items:center;justify-content:center;padding:10px 0;">
+            <a href="index.html">
+                <img src="images/logo 2025-05-15 .jpg" alt="Cure From Pure Logo" style="height:48px;border-radius:8px;">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links" style="display:flex;justify-content:center;gap:32px;list-style:none;margin:0;padding:0 0 12px 0;">
+                <li><a href="index.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Home</a></li>
+                <li><a href="about.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">About</a></li>
+                <li><a href="products.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Products</a></li>
+                <li><a href="solutions.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Solutions</a></li>
+                <li><a href="blog.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Blog</a></li>
+                <li><a href="contact.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Back Arrow to Solutions -->
+    <div style="max-width:1000px;margin:30px auto 0 auto;">
+        <a href="solutions.html" style="display:inline-flex;align-items:center;color:#3c84ce;text-decoration:none;font-size:1.1rem;font-weight:600;">
+            <span style="font-size:1.6rem;line-height:1;margin-right:8px;">&#8592;</span> Back to Solutions
+        </a>
+    </div>
+<div id="header">
+    <h1>Eye Health</h1>
+    <p>Simple ways to keep your eyes healthy and your vision clear</p>
+</div>
+<div class="container">
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Nutrition.jpg" alt="Eat for Eye Health">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Nutrition</p>
+        <h2 class="card-title">Eat for Eye Health</h2>
+        <p class="card-body">
+          Eat foods rich in vitamin A, C, and E, like carrots, spinach, sweet potatoes, and oranges. These nutrients help protect your eyes from damage, support healthy vision, and may lower the risk of eye diseases as you age. Omega-3 fatty acids from fish like salmon and tuna are also important for eye health.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Rest Your Eyes.jpg" alt="Rest Your Eyes">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Rest</p>
+        <h2 class="card-title">Rest Your Eyes</h2>
+        <p class="card-body">
+          Give your eyes regular breaks, especially when using screens or reading for a long time. Try the 20-20-20 rule: every 20 minutes, look at something 20 feet away for at least 20 seconds. This helps prevent eye strain, dryness, and headaches.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Stay Hydrated.jpg" alt="Stay Hydrated">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Hydrate</p>
+        <h2 class="card-title">Stay Hydrated</h2>
+        <p class="card-body">
+          Drink plenty of water throughout the day. Staying hydrated helps keep your eyes moist and comfortable, reduces dryness and irritation, and supports tear production, which is important for clear vision and eye comfort.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Wear Sunglasses.jpg" alt="Wear Sunglasses">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Protect</p>
+        <h2 class="card-title">Wear Sunglasses</h2>
+        <p class="card-body">
+          Always wear sunglasses that block 100% of UVA and UVB rays when you are outside, even on cloudy days. Sunglasses protect your eyes from sun damage, reduce the risk of cataracts, and help prevent eye strain from bright light.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/strain rubbing eye.jpg" alt="Don’t Rub Eyes">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Hygiene</p>
+        <h2 class="card-title">Don’t Rub Your Eyes</h2>
+        <p class="card-body">
+          Avoid touching or rubbing your eyes with your hands. This can transfer germs and dirt, leading to irritation or infection. If your eyes itch, use a clean tissue or wash your hands before touching your face.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/respiratory.jpg" alt="Regular Eye Checkups">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Checkup</p>
+        <h2 class="card-title">Regular Eye Exams</h2>
+        <p class="card-body">
+          Visit an eye doctor for a full eye exam at least once every two years, or more often if you have vision problems. Regular checkups can catch issues like glaucoma, cataracts, or vision changes early, making treatment easier and more effective.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Use Good Lighting.jpg" alt="Good Lighting">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Lighting</p>
+        <h2 class="card-title">Use Good Lighting</h2>
+        <p class="card-body">
+          Make sure your room is well-lit when reading, working, or using a computer. Good lighting helps reduce eye strain and makes it easier to see clearly, especially for close-up tasks.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Limit Screen Time.jpeg" alt="Limit Screen Time">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Screen Time</p>
+        <h2 class="card-title">Limit Screen Time</h2>
+        <p class="card-body">
+          Try to limit how long you look at screens each day. Take regular breaks, blink often to keep your eyes moist, and adjust your screen’s brightness and contrast to comfortable levels. Too much screen time can cause dry eyes, headaches, and blurry vision.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Avoid Smoking.jpg" alt="Quit Smoking">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Lifestyle</p>
+        <h2 class="card-title">Avoid Smoking</h2>
+        <p class="card-body">
+          Smoking increases your risk of eye diseases like cataracts and macular degeneration. If you smoke, try to quit. Protecting your eyes is another good reason to stop smoking for good.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Safety Glasses.jpg" alt="Wear Safety Glasses">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Safety</p>
+        <h2 class="card-title">Wear Safety Glasses</h2>
+        <p class="card-body">
+          If you work with tools, chemicals, or play sports, wear protective eyewear. Safety glasses or goggles help prevent injuries that could harm your vision.
+        </p>
+      </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        :root {
+            --primary: #587FFC;
+            --primary-light: #92A5FD;
+            --primary-dark: #2e4a7a;
+            --secondary: #FF8692;
+            --secondary-light: #b1c2f3;
+            --secondary-dark: #c5d1f6;
+            --accent: #d8e1f9;
+            --light: #ecf0fc;
+            --dark: #333333;
+            --gray: #6c757d;
+            --white: #ffffff;
+        }
+
+        body {
+            background: var(--light);
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+        }
+
+        .profile-header .profile-info {
+            flex-grow: 1;
+        }
+
+        .profile-header .profile-info h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: var(--primary-dark);
+        }
+
+        .profile-header .profile-info p {
+            margin: 0.25rem 0 0 0;
+            color: var(--secondary-dark);
+            font-size: 1rem;
+        }
+
+        .profile-section {
+            margin-bottom: 2rem;
+        }
+
+        .profile-section h2 {
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .profile-field {
+            margin-bottom: 1rem;
+        }
+
+        .profile-field label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--primary-dark);
+        }
+
+        .profile-field input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-size: 1rem;
+            color: var(--dark);
+        }
+
+        .profile-actions {
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Header styles */
+        .header {
+            background: var(--white);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .profile-header img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .profile-header .profile-info h1 {
+                font-size: 1.5rem;
+            }
+
+            .profile-header .profile-info p {
+                font-size: 0.875rem;
+            }
+
+            .btn-primary {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo 2025-05-15 .jpg" alt="Cure From Pure Logo">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="about.html">ℹ️ About</a></li>
+                <li><a href="products.html">💊 Products</a></li>
+                <li><a href="blog.html">📝 Blog</a></li>
+                <li><a href="contact.html">📧 Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="profile-header">
+            <img src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
+                alt="Profile Picture" id="profile-pic">
+            <div class="profile-info">
+                <h1 id="profile-name">User Name</h1>
+                <p id="profile-email">user@example.com</p>
+            </div>
+        </div>
+        <div class="profile-section">
+            <h2>Profile Details</h2>
+            <div class="profile-field">
+                <label for="firstName">Name</label>
+                <input type="text" id="firstName" placeholder="First Name" readonly>
+            </div>
+            <div class="profile-field">
+                <label for="emailId">Email</label>
+                <input type="text" id="emailId" placeholder="Email" readonly>
+            </div>
+        </div>
+        <div class="profile-actions">
+            <button class="btn-primary" id="editProfileBtn">Edit Profile</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get user info from localStorage
+            const user = JSON.parse(localStorage.getItem('userProfile')) || {};
+
+            // Try to fill from API, else use localStorage
+            if (user.username) {
+                fetch(`http://localhost:3000/api/profile/${encodeURIComponent(user.username)}`)
+                    .then(res => res.ok ? res.json() : Promise.reject())
+                    .then(data => {
+                        document.getElementById('firstName').value = data.fullname || '';
+                        document.getElementById('emailId').value = data.email || '';
+                        document.getElementById('profile-name').textContent = data.fullname || '';
+                        document.getElementById('profile-email').textContent = data.email || '';
+                    })
+                    .catch(() => fillFromLocal());
+            } else {
+                fillFromLocal();
+            }
+
+            function fillFromLocal() {
+                document.getElementById('firstName').value = user.fullname || user.first_name || '';
+                document.getElementById('emailId').value = user.email || '';
+                document.getElementById('profile-name').textContent = ((user.fullname || user.first_name || '') + ' ' + (user.surname || '')).trim();
+                document.getElementById('profile-email').textContent = user.email || '';
+            }
+
+            // Edit Profile button logic
+            const editBtn = document.getElementById('editProfileBtn');
+            let editing = false;
+            editBtn.addEventListener('click', () => {
+                editing = !editing;
+                document.getElementById('firstName').readOnly = !editing;
+                document.getElementById('emailId').readOnly = !editing;
+                editBtn.textContent = editing ? 'Save Profile' : 'Edit Profile';
+
+                if (!editing) {
+                    // Save changes to localStorage
+                    user.fullname = document.getElementById('firstName').value;
+                    user.email = document.getElementById('emailId').value;
+                    localStorage.setItem('userProfile', JSON.stringify(user));
+                    // Update display
+                    document.getElementById('profile-name').textContent = (user.fullname + ' ' + (user.surname || '')).trim();
+                    document.getElementById('profile-email').textContent = user.email || '';
+                }
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get user info from localStorage
+            const user = JSON.parse(localStorage.getItem('userProfile')) || {};
+
+            // Try to fill from API, else use localStorage
+            if (user.username) {
+                fetch(`http://localhost:3000/api/profile/${encodeURIComponent(user.username)}`)
+                    .then(res => res.ok ? res.json() : Promise.reject())
+                    .then(data => {
+                        document.getElementById('firstName').value = data.fullname || '';
+                        document.getElementById('emailId').value = data.email || '';
+                        document.getElementById('profile-name').textContent = data.fullname || '';
+                        document.getElementById('profile-email').textContent = data.email || '';
+                    })
+                    .catch(() => fillFromLocal());
+            } else {
+                fillFromLocal();
+            }
+
+            function fillFromLocal() {
+                document.getElementById('firstName').value = user.fullname || user.first_name || '';
+                document.getElementById('emailId').value = user.email || '';
+                document.getElementById('profile-name').textContent = ((user.fullname || user.first_name || '') + ' ' + (user.surname || '')).trim();
+                document.getElementById('profile-email').textContent = user.email || '';
+            }
+        });
+    </script>
+</body>
+
+</html>

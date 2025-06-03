@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Health Remedies</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="about-responsive.css">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: #f7fafc;
+            margin: 0;
+            padding: 0;
+            color: #245fa5;
+        }
+
+        .contact-section.card {
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 2px 12px rgba(60, 132, 206, 0.06);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            margin-top: 60px;
+        }
+
+        .contact-section h1 {
+            color: #3c84ce;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        #contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        label {
+            font-weight: 500;
+            color: #245fa5;
+        }
+
+        .input-field {
+            padding: 0.7em 1em;
+            border: 1px solid #c6e0fa;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: #e3f0ff;
+            color: #245fa5;
+            transition: border-color 0.2s;
+        }
+
+        .input-field:focus {
+            border-color: #3c84ce;
+            outline: none;
+            background: #fff;
+        }
+
+        .btn-primary {
+            background: #3c84ce;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.8em 1.5em;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            background: #245fa5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem 0 1rem 0;
+            color: #245fa5;
+            background: transparent;
+            font-size: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            .contact-section.card {
+                padding: 1.2rem 0.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-section.card {
+                padding: 0.7rem 0.2rem;
+            }
+        }
+
+        /* Animated background like index/blog */
+        .area {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            background: #e3f0ff;
+        }
+
+        .circles li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: #3c84ce;
+            animation: float 25s linear infinite;
+            bottom: -150px;
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .circles li:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-duration: 22s;
+        }
+
+        .circles li:nth-child(2) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-duration: 18s;
+        }
+
+        .circles li:nth-child(3) {
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-duration: 28s;
+        }
+
+        .circles li:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-duration: 32s;
+        }
+
+        .circles li:nth-child(5) {
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-duration: 20s;
+        }
+
+        .circles li:nth-child(6) {
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-duration: 26s;
+        }
+
+        .circles li:nth-child(7) {
+            left: 35%;
+            width: 150px;
+            height: 150px;
+            animation-duration: 30s;
+        }
+
+        .circles li:nth-child(8) {
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            animation-duration: 17s;
+        }
+
+        .circles li:nth-child(9) {
+            left: 20%;
+            width: 15px;
+            height: 15px;
+            animation-duration: 19s;
+        }
+
+        .circles li:nth-child(10) {
+            left: 85%;
+            width: 150px;
+            height: 150px;
+            animation-duration: 35s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+            }
+
+            100% {
+                transform: translateY(-1000px) scale(1.2);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="area" aria-hidden="true">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" aria-label="Home">
+                <img src="images/logo 2025-05-15 .jpg" alt="Cure From Pure Logo">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="about.html">ℹ️ About</a></li>
+                <li><a href="products.html">💊 Products</a></li>
+                <li><a href="blog.html">📝 Blog</a></li>
+                <li><a href="login.html">🔑 Login</a></li>
+                <li><a href="contact.html" aria-current="page">📧 Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-section card" style="max-width: 600px; margin: 2rem auto;">
+        <h1><i class="fas fa-envelope"></i> Contact Us</h1>
+        <form id="contact-form" autocomplete="off">
+            <label for="name"><i class="fas fa-user"></i> Name:</label>
+            <input type="text" id="name" name="name" required class="input-field" placeholder="Your Name">
+
+            <label for="email"><i class="fas fa-envelope-open"></i> Your E-mail:</label>
+            <input type="email" id="email" name="email" required class="input-field" placeholder="your@email.com">
+
+            <label for="to-email"><i class="fas fa-paperclip"></i> To:</label>
+            <input type="email" id="to-email" name="to-email" class="input-field" value="curefrompure@gmail.com"
+                readonly>
+            <label for="message"><i class="fas fa-comment-dots"></i> Message:</label>
+            <textarea id="message" name="message" required class="input-field" rows="5"
+                placeholder="Type your message..."></textarea>
+
+            <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
+            <div id="thankyou-message"
+                style="display:block; color: #245fa5; text-align:center; margin-top:1rem; font-weight:600;"></div>
+            Thank you for contacting us! We have received your message.
+            </div>
+            <script>
+                document.getElementById('contact-form').addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    document.getElementById('thankyou-message').style.display = 'block';
+                    this.reset();
+                });
+            </script>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Health Remedies. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

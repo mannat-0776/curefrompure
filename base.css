@@ -1,0 +1,196 @@
+:root {
+  /* Color Palette */
+  --primary: #7F55B1; /* Accent Elements (Buttons, Highlights) */
+  --primary-light: #9B7EBD; /* Header/Footer */
+  --primary-dark: #F49BAB; /* For hover or darker accents */
+  --secondary: #FFE1E0; /* Card/Box Background */
+  --secondary-light: #ecf0fc; /* Secondary Background */
+  --secondary-dark: #a0b0d9; /* Slightly darker secondary */
+  --background: #ffffff; /* Primary Background */
+  --text-heading: #333333; /* Headings */
+  --text-body: #555555; /* Body text */
+  --white: #ffffff;
+
+  /* Typography */
+  --font-main: 'Poppins', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 4rem;
+
+  /* Borders */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  --border-radius-xl: 2rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.4s ease;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--text-body);
+  background-color: var(--background);
+  overflow-x: hidden;
+}
+
+/* Header and Footer */
+header, footer {
+  background-color: var(--primary-light);
+  color: var(--text-body);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+}
+
+header a, footer a {
+  color: var(--text-body);
+  text-decoration: none;
+  margin-right: var(--space-sm);
+}
+
+header a:hover, footer a:hover {
+  color: var(--primary-dark);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  padding: var(--space-xxl) var(--space-lg);
+  text-align: center;
+  color: var(--white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.hero h1 {
+  font-size: var(--font-size-xxl);
+  margin-bottom: var(--space-sm);
+}
+
+.hero p {
+  font-size: var(--font-size-md);
+  margin-bottom: var(--space-md);
+}
+
+.hero .btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: var(--space-sm) var(--space-lg);
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color var(--transition-fast);
+}
+
+.hero .btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Cards / Info Boxes */
+.card {
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  color: var(--text-body);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+  color: var(--text-heading);
+}
+
+p {
+  margin-bottom: var(--space-md);
+  color: var(--text-body);
+}
+
+/* Links */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* Keep existing background animation styles untouched */
+
+/* Hero Content Styles */
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 5vw 24px 5vw;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+}

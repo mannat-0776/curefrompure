@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Tips - Health Remedies</title>
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="index.css">
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="wellness-tips-modern.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(120deg, #f7fafc 0%, #e3f0ff 100%);
+            margin: 0;
+            min-height: 100vh;
+            color: #222;
+        }
+        .area {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+        .circles {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            margin: 0; padding: 0;
+            overflow: hidden;
+            z-index: -1;
+            list-style: none;
+        }
+        .circles li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 120px;
+            height: 120px;
+            background: rgba(60,132,206,0.13);
+            animation: animate 22s linear infinite;
+            bottom: -150px;
+            border-radius: 50%;
+        }
+        .circles li:nth-child(1) { left: 10%; width: 80px; height: 80px; animation-delay: 0s; }
+        .circles li:nth-child(2) { left: 20%; width: 120px; height: 120px; animation-delay: 2s; animation-duration: 18s; }
+        .circles li:nth-child(3) { left: 25%; width: 100px; height: 100px; animation-delay: 4s; }
+        .circles li:nth-child(4) { left: 40%; width: 140px; height: 140px; animation-delay: 0s; animation-duration: 24s; }
+        .circles li:nth-child(5) { left: 70%; width: 90px; height: 90px; animation-delay: 0s; }
+        .circles li:nth-child(6) { left: 80%; width: 120px; height: 120px; animation-delay: 3s; }
+        .circles li:nth-child(7) { left: 32%; width: 160px; height: 160px; animation-delay: 7s; }
+        .circles li:nth-child(8) { left: 55%; width: 110px; height: 110px; animation-delay: 15s; animation-duration: 17s; }
+        .circles li:nth-child(9) { left: 65%; width: 150px; height: 150px; animation-delay: 2s; animation-duration: 22s; }
+        .circles li:nth-child(10) { left: 90%; width: 90px; height: 90px; animation-delay: 11s; }
+        @keyframes animate {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-1000px) scale(1.2);
+                opacity: 0;
+            }
+        }
+        .header {
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 2px 12px rgba(60,132,206,0.06);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2vw;
+        }
+        .logo img {
+            height: 48px;
+            border-radius: 8px;
+        }
+        nav {
+            flex: 1;
+        }
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        .nav-links li a {
+            color: #3c84ce;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.08rem;
+            transition: color 0.15s;
+        }
+        .nav-links li a:hover {
+            color: #245fa5;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+        .hamburger div {
+            width: 26px;
+            height: 3px;
+            background: #3c84ce;
+            border-radius: 2px;
+        }
+        @media (max-width: 900px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0 1vw;
+            }
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                display: none;
+                background: #fff;
+                box-shadow: 0 2px 12px rgba(60,132,206,0.06);
+                border-radius: 0 0 12px 12px;
+                margin-top: 8px;
+                padding: 12px 0;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+                margin-left: auto;
+                margin-top: 8px;
+            }
+        }
+        main {
+            max-width: 900px;
+            margin: 48px auto 0 auto;
+            background: rgba(255,255,255,0.97);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(60,132,206,0.10), 0 1.5px 6px rgba(0,0,0,0.04);
+            padding: 36px 32px 32px 32px;
+            position: relative;
+            z-index: 1;
+        }
+        /* Hero section like index.html */
+        .hero-section {
+            width: 100%;
+            background: linear-gradient(120deg, #e3f0ff 0%, #f7fafc 100%);
+            /* Remove border-radius and box-shadow for a flatter look */
+            border-radius: 0;
+            box-shadow: none;
+            margin-bottom: 32px;
+            padding: 48px 0 32px 0;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .hero-content h1 {
+            color: #3c84ce;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            letter-spacing: 1px;
+        }
+        .hero-content p {
+            color: #245fa5;
+            font-size: 1.15rem;
+            font-weight: 400;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        @media (max-width: 700px) {
+            .hero-section {
+                padding: 32px 0 18px 0;
+            }
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 18px 0 10px 0;
+            }
+            .hero-content h1 {
+                font-size: 1.15rem;
+            }
+            .hero-content p {
+                font-size: 0.95rem;
+            }
+        }
+        .wellness-lists {
+            display: flex;
+            gap: 36px;
+            justify-content: space-between;
+            margin: 36px 0 24px 0;
+            flex-wrap: wrap;
+        }
+        .wellness-lists > div {
+            flex: 1 1 320px;
+            min-width: 260px;
+            background: #f7fafc;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(60,132,206,0.06);
+            padding: 22px 18px 18px 18px;
+            margin-bottom: 18px;
+        }
+        .wellness-lists h2 {
+            color: #245fa5;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .wellness-lists ul {
+            margin: 0 0 18px 0;
+            padding: 0 0 0 18px;
+        }
+        .wellness-lists li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+            line-height: 1.6;
+            display: flex;
+            align-items: center;
+        }
+        .wellness-lists li span.fas {
+            margin-right: 12px;
+            color: #3c84ce;
+            font-size: 1.1em;
+            min-width: 22px;
+            text-align: center;
+        }
+        blockquote {
+            background: #f5faff;
+            border-left: 5px solid #3c84ce;
+            margin: 32px 0 0 0;
+            padding: 18px 24px;
+            font-style: italic;
+            color: #3c84ce;
+            border-radius: 10px;
+            font-size: 1.08em;
+            display: flex;
+            align-items: center;
+        }
+        blockquote .fas {
+            margin-right: 12px;
+            font-size: 1.3em;
+        }
+        footer {
+            text-align: center;
+            padding: 1.5rem 0 1rem 0;
+            font-size: 1rem;
+            color: #94a3b8;
+            background: transparent;
+            margin-top: 40px;
+        }
+        @media (max-width: 900px) {
+            main {
+                padding: 18px 6vw 18px 6vw;
+            }
+            .hero {
+                font-size: 1.5rem;
+            }
+            .wellness-lists {
+                flex-direction: column;
+                gap: 18px;
+            }
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 10px 2vw 10px 2vw;
+            }
+            .hero {
+                font-size: 1.1rem;
+            }
+            .wellness-lists > div {
+                padding: 12px 8px 10px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="area">
+        <ul class="circles">
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+        </ul>
+    </div>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo 2025-05-15 .jpg" alt="Cure From Pure Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">🏠 Home</a></li>
+                    <li><a href="about.html">ℹ️ About</a></li>
+                    <li><a href="products.html">💊 Products</a></li>
+                    <li><a href="blog.html">📝 Blog</a></li>
+                    <li><a href="login.html">🔑 Login</a></li>
+                    <li><a href="contact.html">📧 Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Wellness Tips</h1>
+                <p>
+                    Discover simple and effective wellness tips to help you feel your best every day.<br>
+                    Small changes can make a big difference in your overall health and happiness!
+                </p>
+            </div>
+        </section>
+        <div class="wellness-lists">
+            <div>
+                <h2>Top Wellness Tips</h2>
+                <ul>
+                    <li><span class="fas fa-tint"></span> <strong>Stay Hydrated:</strong> Drink at least 8 glasses of water daily to keep your body and mind refreshed.</li>
+                    <li><span class="fas fa-bed"></span> <strong>Get Enough Sleep:</strong> Aim for 7-9 hours of quality sleep each night to support recovery and mental clarity.</li>
+                    <li><span class="fas fa-walking"></span> <strong>Move Your Body:</strong> Incorporate physical activity into your routine, even if it’s just a daily walk.</li>
+                    <li><span class="fas fa-apple-alt"></span> <strong>Eat Mindfully:</strong> Choose whole foods, eat slowly, and listen to your hunger cues.</li>
+                    <li><span class="fas fa-heart"></span> <strong>Practice Gratitude:</strong> Take a moment each day to reflect on what you’re thankful for.</li>
+                    <li><span class="fas fa-spa"></span> <strong>Manage Stress:</strong> Try deep breathing, meditation, or yoga to reduce stress levels.</li>
+                    <li><span class="fas fa-users"></span> <strong>Connect with Others:</strong> Spend time with friends and family to boost your mood and well-being.</li>
+                    <li><span class="fas fa-mobile-alt"></span> <strong>Limit Screen Time:</strong> Take breaks from digital devices to rest your eyes and mind.</li>
+                    <li><span class="fas fa-sun"></span> <strong>Get Outside:</strong> Enjoy nature and sunlight for a natural energy and mood boost.</li>
+                    <li><span class="fas fa-brain"></span> <strong>Keep Learning:</strong> Challenge your brain with new skills, hobbies, or reading.</li>
+                </ul>
+            </div>
+            <div>
+                <h2>Quick Daily Wellness Checklist</h2>
+                <ul>
+                    <li><span class="fas fa-check-circle"></span> Drink water</li>
+                    <li><span class="fas fa-check-circle"></span> Eat fruits & veggies</li>
+                    <li><span class="fas fa-check-circle"></span> Move your body</li>
+                    <li><span class="fas fa-check-circle"></span> Take a mindful break</li>
+                    <li><span class="fas fa-check-circle"></span> Connect with someone</li>
+                    <li><span class="fas fa-check-circle"></span> Get fresh air</li>
+                </ul>
+                <h2>More Ways to Boost Your Wellness</h2>
+                <ul>
+                    <li><span class="fas fa-leaf"></span> <strong>Practice Mindfulness:</strong> Spend a few minutes each day focusing on your breath or surroundings to center yourself.</li>
+                    <li><span class="fas fa-laugh-beam"></span> <strong>Laugh Often:</strong> Laughter reduces stress hormones and boosts your immune system.</li>
+                    <li><span class="fas fa-broom"></span> <strong>Declutter Your Space:</strong> A tidy environment can help clear your mind and reduce anxiety.</li>
+                    <li><span class="fas fa-bullseye"></span> <strong>Set Realistic Goals:</strong> Break big goals into small, achievable steps to stay motivated.</li>
+                    <li><span class="fas fa-music"></span> <strong>Listen to Music:</strong> Uplifting music can improve your mood and energy.</li>
+                    <li><span class="fas fa-hands-helping"></span> <strong>Volunteer or Help Others:</strong> Acts of kindness can increase your sense of purpose and happiness.</li>
+                    <li><span class="fas fa-coffee"></span> <strong>Take Breaks:</strong> Short breaks during work or study sessions can improve focus and productivity.</li>
+                    <li><span class="fas fa-sun"></span> <strong>Protect Your Skin:</strong> Use sunscreen and moisturize daily for healthy skin.</li>
+                    <li><span class="fas fa-minus-circle"></span> <strong>Limit Caffeine and Sugar:</strong> Too much can affect your sleep and energy levels.</li>
+                    <li><span class="fas fa-book"></span> <strong>Reflect Each Evening:</strong> Write down three good things that happened during your day.</li>
+                </ul>
+            </div>
+        </div>
+        <blockquote>
+            <span class="fas fa-quote-left"></span>
+            "Wellness is the complete integration of body, mind, and spirit." – Greg Anderson
+        </blockquote>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Health Remedies. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('nav ul.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Health - Health Remedies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Playfair Display', serif;
+    }
+    #header{
+      margin:20px;
+    }
+    #header>h1{
+      text-align:center;
+      font-size:3rem;
+    }
+    #header>p{
+      text-align:center;
+      font-size:1.5rem;
+      font-style:italic;
+    }
+    .container{
+      width:100vw;
+      display:flex;
+      justify-content:space-around;
+      flex-wrap:wrap;
+      padding:40px 20px;
+    }
+    .card{
+      display:flex;
+      flex-direction:column;
+      width:400px;
+      margin-bottom:60px;
+    }
+    .card>div{
+      box-shadow:0 15px 20px 0 rgba(0,0,0,0.5);
+    }
+    .card-image{
+      width:400px;
+      height:250px;
+    }
+    .card-image>img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+    }
+    .card-text{
+      margin:-30px auto;
+      margin-bottom:-50px;
+      height:320px;
+      width:300px;
+      background-color:#1D1C20;
+      color:#fff;
+      padding:20px;
+    }
+    .card-meal-type{
+      font-style:italic;
+    }
+    .card-title{
+      font-size:2.2rem;
+      margin-bottom:20px;
+      margin-top:5px;
+    }
+    .card-body{
+      font-size:1.15rem;
+    }
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        width:90vw;
+      }
+      .card-image, .card-text {
+        width:90vw;
+        max-width:400px;
+      }
+    }
+    </style>
+</head>
+<body>
+    <!-- Animated Background like index -->
+    <div class="area">
+        <ul class="circles">
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+        </ul>
+    </div>
+    <!-- Navigation Bar (like index) -->
+    <header class="header" style="background:rgba(29,28,32,0.95);padding:0;">
+        <div class="logo" style="display:flex;align-items:center;justify-content:center;padding:10px 0;">
+            <a href="index.html">
+                <img src="images/logo 2025-05-15 .jpg" alt="Cure From Pure Logo" style="height:48px;border-radius:8px;">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links" style="display:flex;justify-content:center;gap:32px;list-style:none;margin:0;padding:0 0 12px 0;">
+                <li><a href="index.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Home</a></li>
+                <li><a href="about.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">About</a></li>
+                <li><a href="products.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Products</a></li>
+                <li><a href="solutions.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Solutions</a></li>
+                <li><a href="blog.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Blog</a></li>
+                <li><a href="contact.html" style="color:#fff;text-decoration:none;font-size:1.1rem;">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Back Arrow to Solutions -->
+    <div style="max-width:1000px;margin:30px auto 0 auto;">
+        <a href="solutions.html" style="display:inline-flex;align-items:center;color:#3c84ce;text-decoration:none;font-size:1.1rem;font-weight:600;">
+            <span style="font-size:1.6rem;line-height:1;margin-right:8px;">&#8592;</span> Back to Solutions
+        </a>
+    </div>
+<div id="header">
+    <h1>Heart Health</h1>
+    <p>Simple steps to keep your heart strong and healthy for life</p>
+</div>
+<div class="container">
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Nutrition.jpg" alt="Eat Heart-Healthy Foods">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Nutrition</p>
+        <h2 class="card-title">Eat Heart-Healthy Foods</h2>
+        <p class="card-body">
+          Choose foods that are good for your heart, like fruits, vegetables, whole grains, nuts, and fish. Limit foods high in salt, sugar, and unhealthy fats. Eating a balanced diet helps lower cholesterol and blood pressure, and keeps your heart working well.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Exercise Regularly.jpg" alt="Stay Active">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Exercise</p>
+        <h2 class="card-title">Stay Active</h2>
+        <p class="card-body">
+          Move your body every day. Walking, cycling, swimming, or dancing all help your heart stay strong. Aim for at least 30 minutes of moderate activity most days of the week to improve circulation and lower your risk of heart disease.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Weight Loss.jpg" alt="Maintain Healthy Weight">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Weight</p>
+        <h2 class="card-title">Maintain Healthy Weight</h2>
+        <p class="card-body">
+          Keeping a healthy weight reduces strain on your heart and lowers your risk for high blood pressure, diabetes, and heart disease. Focus on healthy eating and regular exercise to reach and maintain your best weight.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Avoid Smoking.jpg" alt="Don’t Smoke">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Lifestyle</p>
+        <h2 class="card-title">Don’t Smoke</h2>
+        <p class="card-body">
+          Smoking damages your blood vessels and heart. If you smoke, quitting is one of the best things you can do for your heart health. Avoid secondhand smoke too.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Stress Relief.jpg" alt="Manage Stress">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Stress</p>
+        <h2 class="card-title">Manage Stress</h2>
+        <p class="card-body">
+          Stress can raise your blood pressure and harm your heart over time. Try deep breathing, meditation, or spending time with loved ones to relax and keep your heart calm.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Get Enough Sleep.jpeg" alt="Get Enough Sleep">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Rest</p>
+        <h2 class="card-title">Get Enough Sleep</h2>
+        <p class="card-body">
+          Aim for 7-9 hours of sleep each night. Good sleep helps your body repair and keeps your heart healthy. Poor sleep can increase your risk of high blood pressure and heart problems.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Limit Alcohol.jpg" alt="Limit Alcohol">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Moderation</p>
+        <h2 class="card-title">Limit Alcohol</h2>
+        <p class="card-body">
+          Drinking too much alcohol can raise your blood pressure and harm your heart. If you drink, do so in moderation—no more than one drink a day for women and two for men.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Regular Health Checkups.jpg" alt="Regular Checkups">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Checkup</p>
+        <h2 class="card-title">Regular Checkups</h2>
+        <p class="card-body">
+          Visit your doctor for regular checkups and screenings. Monitoring your blood pressure, cholesterol, and blood sugar helps catch problems early and keeps your heart healthy.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/Stay Hydrated.jpg" alt="Stay Hydrated">
+      </div>
+      <div class="card-text">
+        <p class="card-meal-type">Hydrate</p>
+        <h2 class="card-title">Stay Hydrated</h2>
+        <p class="card-body">
+          Drinking enough water helps your blood flow smoothly and supports your heart’s work. Try to drink water throughout the day and limit sugary drinks.
+        </p>
+      </div>
+    </div>
+</div>
+</body>
+</html>
