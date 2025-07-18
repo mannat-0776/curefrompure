@@ -2,7 +2,8 @@
 
 # CureFromPure 🌿
 
-**CureFromPure** is a simple, user-friendly health remedies website that provides natural and home-based solutions for common illnesses. Built using HTML, CSS, and JavaScript, this platform aims to help users explore preventive care, seasonal health tips, and wellness practices — straight from nature.
+**CureFromPure** is a simple, user-friendly health remedies website that provides natural and home-based solutions for common illnesses. 
+Built using HTML, CSS, and JavaScript, this platform aims to help users explore preventive care, seasonal health tips, and wellness practices —   straight from nature.
 
 ---
 
@@ -25,7 +26,9 @@
 - **JavaScript** – Interactivity and logic (especially for the Symptom Checker)  
 
 ---
+
 📌 Future Improvements
+
 🔗 Backend support for user login and preferences
 
 🤖 AI-powered chatbot for health queries
